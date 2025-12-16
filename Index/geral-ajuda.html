@@ -206,7 +206,77 @@
 
     <!-- Conteúdo da página -->
     <main class="main-content page-content">
-      <!-- Aqui colocas o conteúdo específico de cada página -->
+      <div class="card-grid-bottom">
+  <!-- Contactos Institucionais -->
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Contactos Institucionais</h4>
+    </div>
+    <div class="card-content" style="line-height: 1.6;">
+      <p><strong>Reitoria da Universidade da Madeira</strong><br>
+      Colégio dos Jesuítas – Rua dos Ferreiros<br>
+      9000-082 Funchal – Portugal<br>
+      Tel: (+351) 291 209 400<br>
+      Email: <a href="mailto:gabinete@reitoria.uma.pt">gabinete@reitoria.uma.pt</a></p>
+
+      <p><strong>Campus Universitário da Penteada</strong><br>
+      Caminho da Penteada<br>
+      9020-105 Funchal<br>
+      Tel: (+351) 291 705 000</p>
+
+      <p><strong>Gabinete de Apoio ao Estudante</strong><br>
+      Campus Universitário da Penteada<br>
+      9020-105 Funchal<br>
+      Tel: (+351) 291 705 270<br>
+      Email: <a href="mailto:apoio.estudante@mail.uma.pt">apoio.estudante@mail.uma.pt</a><br>
+      <a href="https://www.uma.pt/sobre/servico-apoio-estudantes/gabinete-de-apoio-ao-estudante/" target="_blank">Ver página oficial</a></p>
+    </div>
+  </div>
+
+  <!-- Formulário de Contacto -->
+  <div class="card">
+    <div class="card-header">
+      <h4 class="card-title">Contacto Direto</h4>
+    </div>
+    <div class="card-content">
+      <form style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+        <label>
+          Para:
+          <select name="destinatario" required>
+            <option value="apoio">Gabinete de Apoio ao Estudante</option>
+            <option value="reitoria">Reitoria</option>
+            <option value="geral">Serviços Académicos</option>
+          </select>
+        </label>
+
+        <label>
+          Nome:
+          <input type="text" name="nome" required />
+        </label>
+
+        <label>
+          E-mail:
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Assunto:
+          <input type="text" name="assunto" required />
+        </label>
+
+        <label>
+          Mensagem:
+          <textarea name="mensagem" rows="5" required></textarea>
+        </label>
+
+        <button type="submit" class="card-icon-button" style="align-self: flex-start;">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
     </main>
   </div> <!-- fecha app-container -->
 

@@ -455,23 +455,26 @@ a:hover {
   width: 100%;
 }
 
-footer {
-  grid-column: 1 / -1;
+.site-footer {
+  grid-column: 1 / -1;               /* ocupa toda a largura do grid */
   background-color: var(--cor-primaria);
   color: var(--bg-light);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  font-size: 0.7rem;                 /* mais fino */
+  padding: 0.4rem 0.5rem;            /* altura reduzida */
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;                 /* empurra para o fundo se houver espaço */
 }
-footer nav a {
+
+.site-footer a {
   color: var(--bg-light);
-  margin-left: var(--spacing-md);
-  transition: color 0.3s ease;
+  text-decoration: underline;
 }
-footer nav a:hover {
-  color: var(--cor-aviso);
+.footer-meta {
+  font-style: italic;
+  opacity: 0.8;
 }
+
 
 @container (min-width: 600px) {
   .card {
