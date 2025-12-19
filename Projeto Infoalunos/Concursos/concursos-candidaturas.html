@@ -208,6 +208,88 @@
 
     <!-- Main content -->
     <main class="main-content page-content">
+      <div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Candidaturas</h3>
+  </div>
+  
+  <div class="card-content">
+    <div class="multibanco-info" style="gap: 10px; padding: 15px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <label style="width: 80px; font-weight: 600; font-size: 0.9rem;">Concurso</label>
+        <select style="flex: 1; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px;">
+          <option>Doutoramento 2025/26</option>
+        </select>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <label style="width: 80px; font-weight: 600; font-size: 0.9rem;">Curso</label>
+        <select style="flex: 1; padding: 4px; border: 1px solid var(--border-color); border-radius: 4px;">
+          <option></option>
+          <option>Ciências Biológicas</option>
+          <option>Engenharia Informática</option>
+        </select>
+      </div>
+      <div style="text-align: right; margin-top: 5px;">
+        <button style="padding: 4px 15px; cursor: pointer; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 4px;">Pesquisar</button>
+      </div>
+    </div>
+
+    <div style="overflow-x: auto; margin-top: 20px;">
+      <table class="payment-table">
+        <thead>
+          <tr style="background-color: #ffe8d4;"> <th style="color: #333;">Concurso</th>
+            <th style="color: #333;">Fase</th>
+            <th style="color: #333;">Tipo Curso</th>
+            <th style="color: #333;">Curso</th>
+            <th style="color: #333;">Vagas</th>
+            <th style="color: #333;">Candidatura</th>
+            <th style="color: #333;">Cand. Aluno</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span style="color: blue; font-weight: bold;">[+]</span> Doutoramento 2025/26</td>
+            <td>1ª Fase</td>
+            <td>3º Ciclo</td>
+            <td><strong>Ciências Biológicas</strong></td>
+            <td>10</td>
+            <td>De 2025-05-16 a 2026-06-11</td>
+            <td></td>
+            <td><a href="#" style="color: blue; text-decoration: underline; font-weight: 600;">Preencher Candidatura</a></td>
+          </tr>
+          <tr>
+            <td><span style="color: blue; font-weight: bold;">[+]</span> Doutoramento 2025/26</td>
+            <td>1ª Fase</td>
+            <td>3º Ciclo</td>
+            <td><strong>Engenharia Eletrotécnica</strong></td>
+            <td>5</td>
+            <td>De 2025-05-16 a 2026-06-11</td>
+            <td></td>
+            <td><a href="#" style="color: blue; text-decoration: underline; font-weight: 600;">Preencher Candidatura</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="font-size: 0.85rem; margin-top: 15px; color: var(--cor-info);">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+      Sem resultados.
+    </p>
+
+    <div style="margin-top: 40px; border-top: 1px solid var(--border-color); padding-top: 20px; text-align: center;">
+      <h4 style="text-align: left; font-size: 1rem;">Candidatura</h4>
+      <p style="font-size: 0.85rem; color: var(--text-light); margin-bottom: 20px;">
+        Click on "Submit Application" and then on "Confirm Submission"<br>
+        Clique em "Submeter Candidatura" e depois em "Confirmar Submissão"
+      </p>
+      <div style="display: flex; justify-content: center; gap: 10px;">
+        <button style="padding: 6px 12px; background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer;">Submeter Candidatura</button>
+        <button disabled style="padding: 6px 12px; background: var(--bg-lighter); border: 1px solid var(--border-color); border-radius: 4px; color: #aaa; cursor: not-allowed;">Confirmar Submissão</button>
+      </div>
+    </div>
+  </div>
+</div>
       <!-- Main content -->
     </main>
     <footer class="site-footer">

@@ -208,6 +208,172 @@
 
     <!-- Main content -->
     <main class="main-content page-content">
+      <div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Avaliação / Inquérito RAIDES</h3>
+  </div>
+
+  <div class="card-content">
+    <div style="margin-bottom: 25px;">
+      <select style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: #e8f0fe; font-weight: bold;">
+        <option>2025/26 - CTeSP - Tecnologias e Programação de Sistemas de Informação</option>
+      </select>
+      <p style="font-size: 0.75rem; color: #666; margin-top: 10px; text-align: center;">
+        Este Inquérito destina-se à recolha de dados, de acordo com as regras estabelecidas pela Direção-Geral de Estatísticas da Educação e Ciência, sendo de preenchimento obrigatório.
+      </p>
+    </div>
+
+    <div class="multibanco-info" style="padding: 15px; margin-bottom: 20px;">
+      <h4 class="raides-section-title"><span>1</span> Informações sobre o Ingresso</h4>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.85rem;">
+        <div><strong>Ano Letivo de Ingresso:</strong> 2025/26</div>
+        <div><strong>Forma de Ingresso:</strong> Titulares de curso de ensino secundário ou de habilitação legalmente equivalente</div>
+      </div>
+    </div>
+
+    <div class="multibanco-info" style="padding: 15px; margin-bottom: 20px;">
+      <h4 class="raides-section-title"><span>2</span> Informações relativas à escolaridade completa mais elevada</h4>
+      
+      <div style="margin-bottom: 20px; font-size: 0.85rem; color: var(--text-dark);">
+        <p style="margin-bottom: 10px;">Caso a sua escolaridade mais elevada corresponda a algumas das opções abaixo apresentadas deverá, selecioná-la.</p>
+        
+        <div style="border: 2px solid var(--cor-primaria); padding: 12px; border-radius: 6px; margin-bottom: 10px; background: #fff;">
+          <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: 500;">
+            <input type="radio" name="esc_pre" checked style="accent-color: var(--cor-primaria);"> 
+            2025 - Ensino Secundário ou Equivalente (12º Ano Escolaridade) - Portugal
+          </label>
+        </div>
+
+        <div style="padding: 5px 12px;">
+          <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+            <input type="radio" name="esc_pre" style="accent-color: var(--cor-primaria);"> 
+            Caso a opção que procura não se encontre na lista acima, deve selecionar esta opção e inserir a informação na secção seguinte
+          </label>
+        </div>
+      </div>
+
+      <div class="raides-grid">
+        <label>Qual o nível de escolaridade mais elevado que possui?</label>
+        <select>
+          <option selected disabled>Selecione uma opção</option>
+          <option>Ensino básico - 1.º ciclo (4.º ou 5.º ano completo)</option>
+          <option>Ensino básico - 2.º ciclo (6.º, 7.º ou 8.º ano completo)</option>
+          <option>Ensino básico - 3.º ciclo (9.º, 10.º ou 11.º ano completo)</option>
+          <option>Ensino secundário (12.º ano de escolaridade completo)</option>
+          <option>Ensino pós-secundário não superior (CET)</option>
+          <option>Ensino superior - CTeSP</option>
+          <option>Ensino superior - Licenciatura</option>
+          <option>Ensino superior - Mestrado / Doutoramento</option>
+          <option>Outro</option>
+        </select>
+
+        <label>Em que país completou essa escolaridade?</label>
+        <select>
+          <option>Portugal</option>
+          <option>Brasil</option>
+          <option>Angola</option>
+          </select>
+
+        <label>Em que ano civil concluiu esse nível?</label>
+        <select>
+          <option>2025</option><option>2024</option><option>2023</option><option>2022</option>
+          <option>2021</option><option>2020</option>
+        </select>
+
+        <label>Tipo de estabelecimento (secundário):</label>
+        <select>
+          <option>Público</option><option>Privado</option><option>Público e Privado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="multibanco-info" style="padding: 15px; margin-bottom: 20px;">
+      <h4 class="raides-section-title"><span>3</span> Informações relativas aos pais do aluno</h4>
+      
+      <div class="raides-grid">
+        <div class="raides-parent-sub">Pai</div>
+        <label>Habilitação académica do pai?</label>
+        <select>
+          <option selected disabled>Selecione uma opção</option>
+          <option>Não sabe Ler nem Escrever</option>
+          <option>Sabe Ler e Escrever (sem ter o 4º Ano)</option>
+          <option>1 Ciclo do ensino básico (4º Ano)</option>
+          <option>2 Ciclo do ensino básico (6º Ano)</option>
+          <option>3 Ciclo do ensino básico (9º Ano)</option>
+          <option>Ensino Secundário ou Equivalente (12º Ano)</option>
+          <option>Ensino Médio / Bacharelato / Licenciatura</option>
+          <option>Mestrado / Doutoramento</option>
+        </select>
+
+        <label>Situação profissional do pai?</label>
+        <select>
+          <option>Trabalhador por Conta de Outrem</option>
+          <option>Trabalhador por Conta Própria (Empregador)</option>
+          <option>Reformado / Desempregado</option>
+        </select>
+
+        <label>Profissão do pai?</label>
+        <select>
+          <option>Especialistas em tecnologias de informação (TIC)</option>
+          <option>Professores / Profissionais de saúde</option>
+          <option>Vendedores / Administrativos</option>
+          <option>Não Sabe / Não se Aplica</option>
+        </select>
+
+        <div class="raides-parent-sub" style="margin-top: 15px;">Mãe</div>
+        <label>Habilitação académica da mãe?</label>
+        <select>
+          <option selected disabled>Selecione uma opção</option>
+          <option>Não sabe Ler nem Escrever</option>
+          <option>Ensino Secundário ou Equivalente (12º Ano)</option>
+          <option>Licenciatura / Mestrado / Doutoramento</option>
+        </select>
+
+        <label>Situação profissional da mãe?</label>
+        <select>
+          <option>Trabalhador por Conta de Outrem</option>
+          <option>Doméstica / Reformada / Desempregada</option>
+        </select>
+
+        <label>Profissão da mãe?</label>
+        <select>
+          <option>Pessoal de apoio direto a clientes</option>
+          <option>Professores / Profissionais de saúde</option>
+          <option>Não Sabe / Não se Aplica</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="multibanco-info" style="padding: 15px; margin-bottom: 20px;">
+      <h4 class="raides-section-title"><span>4</span> Informações relativas ao aluno</h4>
+      <div class="raides-grid">
+        <label>Qual a sua situação profissional?</label>
+        <select>
+          <option>Estudante</option><option>Trabalhador por Conta de Outrem</option>
+          <option>Desempregado</option>
+        </select>
+
+        <label>Qual a sua profissão atual?</label>
+        <select><option>Não Sabe / Não se Aplica</option><option>Especialista TIC</option></select>
+
+        <label>País onde concluiu o secundário?</label>
+        <select><option>Portugal</option><option>Angola</option><option>Brasil</option></select>
+
+        <label>Está deslocado da residência familiar?</label>
+        <select><option>Não</option><option>Sim</option></select>
+      </div>
+    </div>
+
+    <div style="text-align: right; margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px;">
+      <button style="background-color: var(--cor-sucesso); color: white; border: none; padding: 12px 35px; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 0.85rem;">
+        Submeter inquérito
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
       <!-- Main content -->
     </main>
     <footer class="site-footer">

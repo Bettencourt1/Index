@@ -207,7 +207,67 @@
     </aside>
 
     <!-- Main content -->
-    <main class="main-content page-content">
+    <div class="main-content">
+    <h3 style="font-size: 0.85rem; font-weight: bold; margin-bottom: 10px;">Lista de Documentos Académicos</h3>
+
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+        <label style="font-size: 0.75rem;">Filtrar por Categoria</label>
+        <select style="flex-grow: 1; height: 22px; border: 1px solid #b5c7de; background: #f0f7ff; font-size: 0.75rem;">
+            <option value="">Documentos do Sector Académico</option>
+            <option>Suplemento ao Diploma</option>
+            <option>Certificado de Conclusão</option>
+            <option>Certificado de Matrícula</option>
+            <option>Certificado de Inscrição</option>
+            <option>Certificado de Aproveitamento</option>
+            <option selected>Inscrições</option>
+            <option>Diploma/Carta de Curso (Borrão)</option>
+            <option>Certidão de Registo</option>
+            <option>Declaração Passe - Sub23</option>
+            <option>Certidão de Registo Outros Graus</option>
+            <option>Declaração de matrícula para fins sociais</option>
+            <option>Declaração de aproveitamento para fins sociais</option>
+        </select>
+        <button style="padding: 2px 30px; background: #f0f0f0; border: 1px solid #ccc; font-size: 0.8rem; cursor: pointer; border-radius: 3px; box-shadow: 0 1px 2px rgba(0,0,0,0.1);">Filtrar</button>
+    </div>
+
+    <div class="card" style="padding: 0; border: 1px solid #ccc; overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem; min-width: 900px;">
+            <thead>
+                <tr style="background: #ffe0b2; border-bottom: 1px solid #ccc;">
+                    <th style="padding: 6px; border-right: 1px solid #ddd; text-align: center; width: 60px;">Ano L.</th>
+                    <th style="padding: 6px; border-right: 1px solid #ddd; text-align: left;">Ficheiro</th>
+                    <th style="padding: 6px; border-right: 1px solid #ddd; text-align: left; width: 100px;">Categoria</th>
+                    <th style="padding: 6px; border-right: 1px solid #ddd; text-align: left;">Curso</th>
+                    <th style="padding: 6px; text-align: center; width: 120px;">V.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="border-bottom: 1px solid #eee; background: #fff;">
+                    <td style="padding: 8px; text-align: center; border-right: 1px solid #eee;">2025/26</td>
+                    <td style="padding: 8px; border-right: 1px solid #eee;">
+                        <div style="display: flex; align-items: center; gap: 6px;">
+                            <i class="fas fa-file-pdf" style="color: #d32f2f; font-size: 1.1rem;"></i>
+                            <a href="#" style="color: #0000ee; text-decoration: none;">Matrícula Cursos Técnicos Superiores Profissionais CTeSP -P697 - Fase Julho (2025/26) <span style="color: #666;">(11.16 KB)</span></a>
+                        </div>
+                    </td>
+                    <td style="padding: 8px; border-right: 1px solid #eee;">Inscrições</td>
+                    <td style="padding: 8px; border-right: 1px solid #eee;">
+                        <div>Tecnologias e Programação de Sistemas de Informação</div>
+                        <div style="color: #666; font-size: 0.7rem;">Curso Técnico Superior Profissional</div>
+                    </td>
+                    <td style="padding: 8px; text-align: center;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 5px;">
+                            <i class="fas fa-check" style="color: green; font-size: 0.7rem;"></i>
+                            <span>2025-09-18 17:14</span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
       <!-- Main content -->
     </main>
     <footer class="site-footer">

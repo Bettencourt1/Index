@@ -208,6 +208,74 @@
 
     <!-- Main content -->
     <main class="main-content page-content">
+      <div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Pautas</h3>
+  </div>
+
+  <div class="card-content">
+    <div class="multibanco-info" style="gap: 12px; padding: 20px; margin-bottom: 25px;">
+      
+      <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 10px;">
+        <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: var(--cor-primaria);">Pesquisa de Disciplinas</h4>
+        
+        <div style="display: grid; grid-template-columns: 120px 1fr auto; gap: 15px; align-items: center; margin-bottom: 8px;">
+          <label style="font-weight: 600; font-size: 0.85rem;">Ano Lectivo</label>
+          <select style="padding: 4px; border: 1px solid var(--border-color); border-radius: 4px; background: #e8f0fe;">
+            <option>2025/26</option>
+          </select>
+          <button style="padding: 4px 15px; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Pesquisar...</button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 120px 1fr; gap: 15px; align-items: center;">
+          <label style="font-weight: 600; font-size: 0.85rem;">Disciplina</label>
+          <select style="padding: 4px; border: 1px solid var(--border-color); border-radius: 4px; background: #e8f0fe;">
+            <option>Desenvolvimento Web - Back-End_CTeSP_TPSI [ S2 ]</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.9rem; margin-bottom: 10px; color: var(--cor-primaria);">Pesquisa de Avaliações</h4>
+        <div style="display: grid; grid-template-columns: 120px 1fr auto; gap: 15px; align-items: center;">
+          <label style="font-weight: 600; font-size: 0.85rem;">Tipo Avaliação</label>
+          <select style="padding: 4px; border: 1px solid var(--border-color); border-radius: 4px; background: #e8f0fe;">
+            <option value=""></option>
+            <option>Exame Recurso</option>
+            <option>Avaliação Contínua</option>
+          </select>
+          <button style="padding: 4px 15px; background: var(--bg-light); border: 1px solid var(--border-color); border-radius: 4px; cursor: pointer; font-size: 0.8rem;">Pesquisar...</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="border: 1px solid var(--border-color); border-radius: 4px; padding: 15px;">
+      <h4 style="font-size: 0.95rem; margin-bottom: 15px;">Lista de Pautas</h4>
+      
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-bottom: 20px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--cor-info)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        <span style="color: var(--text-dark);">Seleccione uma disciplina e/ou tipo de avaliação!</span>
+      </div>
+
+      <div style="border: 1px solid var(--border-color); border-radius: 4px; padding: 15px; background-color: var(--bg-light);">
+        <h5 style="font-size: 0.9rem; margin-bottom: 12px; font-weight: 700;">Alunos associados às pautas</h5>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--cor-info)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span style="color: var(--text-dark);">Seleccione uma ou mais pautas!</span>
+          </div>
+          
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 0.85rem;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--cor-info)"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span style="color: var(--text-dark);">Sem resultados</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
       <!-- Main content -->
     </main>
     <footer class="site-footer">

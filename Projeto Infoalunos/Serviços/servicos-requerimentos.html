@@ -305,26 +305,6 @@
           </div>
         </div>
 
-        <!-- Inline CSS to handle tab panels (kept scoped to this page) -->
-        <style>
-          .req-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: var(--spacing-md); }
-          .req-tab { padding: 0.5rem 1rem; background: none; border: 1px solid var(--border-color); border-bottom: none; border-radius: 4px 4px 0 0; cursor: pointer; }
-          .req-tab:hover { background: var(--bg-lighter); }
-          .req-tab-radio { position: absolute; left: -9999px; }
-          .req-panels { min-height: 200px; }
-          .req-panel { display: none; }
-          #tab-lista:checked ~ .req-panels .req-panel-lista { display: block; }
-          #tab-submeter:checked ~ .req-panels .req-panel-submeter { display: block; }
-          /* Active tab visual */
-          #tab-lista:checked ~ .req-tabs label[for="tab-lista"],
-          #tab-submeter:checked ~ .req-tabs label[for="tab-submeter"] {
-            background-color: var(--bg-light);
-            color: var(--cor-primaria);
-            border-bottom: 1px solid var(--bg-light);
-            font-weight: var(--font-weight-semibold);
-          }
-        </style>
-
     </main>
     <footer class="site-footer">
       <div class="footer-content">

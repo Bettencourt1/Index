@@ -209,14 +209,33 @@
 		</aside>
 
 		<!-- Main content -->
-		<main class="main-content page-content">
-			<div class="card">
-				<div class="card-header"><h4 class="card-title">Marcar Presença</h4></div>
-				<div class="card-content">
-					<p>Conteúdo de marcação de presença será colocado aqui.</p>
-				</div>
-			</div>
-		</main>
+		<div class="main-content">
+    <div style="text-align: center; width: 100%; margin-top: var(--spacing-xl);">
+        
+        <h2 style="color: var(--cor-primaria); margin-bottom: var(--spacing-xl);">
+            Marcar Presença
+        </h2>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-xl);">
+            <input type="text" maxlength="1" 
+                   style="width: 50px; height: 60px; text-align: center; font-size: 1.5rem; border: 2px solid var(--cor-primaria); border-radius: 4px; background: var(--bg-light);">
+            
+            <input type="text" maxlength="1" 
+                   style="width: 50px; height: 60px; text-align: center; font-size: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-light);">
+            
+            <input type="text" maxlength="1" 
+                   style="width: 50px; height: 60px; text-align: center; font-size: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-light);">
+            
+            <input type="text" maxlength="1" 
+                   style="width: 50px; height: 60px; text-align: center; font-size: 1.5rem; border: 1px solid var(--border-color); border-radius: 4px; background: var(--bg-light);">
+        </div>
+
+        <button style="padding: var(--spacing-sm) var(--spacing-xl); background: none; border: 1px solid var(--cor-primaria); color: var(--cor-primaria); border-radius: 4px; cursor: pointer;">
+            Confirmar
+        </button>
+
+    </div>
+</div>
 
 		<!-- Footer -->
 		<footer class="site-footer">

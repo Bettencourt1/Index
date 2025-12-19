@@ -280,6 +280,49 @@ a:hover {
 .card-empty-content { min-height: 100px; }
 .card-empty-content-large { min-height: 250px; }
 
+/* Make the Lista de Requerimentos panel stretch when empty by creating a
+   vertical flex chain: panel -> card -> card-content -> empty-state */
+.req-panel-lista {
+  display: flex;
+  flex-direction: column;
+  /* Aim to occupy the available viewport height under the header */
+  min-height: calc(100vh - 70px);
+}
+/* Card within the list panel becomes a flex column and grows */
+.req-panel-lista .card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0; /* allow children to shrink properly */
+}
+/* Card content also grows and stacks children vertically */
+.req-panel-lista .card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: var(--spacing-md);
+}
+/* Empty state and info box participate in flex growth and center content */
+.req-panel-lista .multibanco-info,
+.req-panel-lista .card-empty-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-bottom: 0; /* spacing handled by card-content gap above */
+}
+/* Ensure the empty content does not keep a fixed min-height that blocks flexing */
+.req-panel-lista .card-empty-content { min-height: 0; }
+
+/* Make active tab panels use flex layout (override inline page styles that set display:block) */
+#tab-lista:checked ~ .req-panels .req-panel-lista,
+#tab-submeter:checked ~ .req-panels .req-panel-submeter {
+  display: flex !important;
+  flex-direction: column;
+}
+
 .payment-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 .payment-table th, .payment-table td {
     padding: var(--spacing-sm); text-align: left;
@@ -292,6 +335,9 @@ a:hover {
 .payment-table .text-right { text-align: right; }
 
 .multibanco-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     background-color: light-dark(var(--bg-lighter), #444);
     padding: var(--spacing-sm);
     border-radius: 0.25rem;
@@ -557,3 +603,109 @@ input:user-valid {
 input:user-invalid {
   border: 2px solid var(--cor-perigo);
 }
+
+.req-tabs { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: var(--spacing-md); }
+          .req-tab { padding: 0.5rem 1rem; background: none; border: 1px solid var(--border-color); border-bottom: none; border-radius: 4px 4px 0 0; cursor: pointer; }
+          .req-tab:hover { background: var(--bg-lighter); }
+          .req-tab-radio { position: absolute; left: -9999px; }
+          .req-panels { min-height: 200px; }
+          .req-panel { display: none; }
+          #tab-lista:checked ~ .req-panels .req-panel-lista { display: block; }
+          #tab-submeter:checked ~ .req-panels .req-panel-submeter { display: block; }
+          /* Active tab visual */
+          #tab-lista:checked ~ .req-tabs label[for="tab-lista"],
+          #tab-submeter:checked ~ .req-tabs label[for="tab-submeter"] {
+            background-color: var(--bg-light);
+            color: var(--cor-primaria);
+            border-bottom: 1px solid var(--bg-light);
+            font-weight: var(--font-weight-semibold);
+          }
+
+  .raides-section-title {
+    color: var(--cor-primaria);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  .raides-section-title span {
+    background: var(--cor-primaria);
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-size: 0.7rem;
+  }
+  .raides-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    align-items: center;
+  }
+  .raides-grid label { font-size: 0.85rem; color: var(--text-dark); font-weight: 500; }
+  .raides-grid select { padding: 6px; border: 1px solid var(--border-color); border-radius: 4px; font-size: 0.85rem; background: #fff; }
+  .raides-parent-sub {
+    grid-column: 1/-1;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 800px) { .raides-grid { grid-template-columns: 1fr; } }
+
+    /* Lógica de Visibilidade CSS Puro */
+    .req-panel { display: none !important; }
+    #tab-novo:checked ~ .card #content-novo,
+    #tab-plano:checked ~ .card #content-plano,
+    #tab-doc:checked ~ .card #content-doc { display: block !important; }
+
+    /* Estilo Ativo das Labels do teu styles.css */
+    #tab-novo:checked ~ .req-tabs label[for="tab-novo"],
+    #tab-plano:checked ~ .req-tabs label[for="tab-plano"],
+    #tab-doc:checked ~ .req-tabs label[for="tab-doc"] {
+        background-color: var(--bg-light) !important;
+        color: var(--cor-primaria) !important;
+        border-bottom: 1px solid var(--bg-light);
+        font-weight: var(--font-weight-bold);
+    }
+
+    /* Ajustes para o styles.css do usuário */
+    .main-content {
+        padding: 20px;
+        font-family: var(--font-family, sans-serif);
+    }
+
+    table thead th {
+        font-weight: bold;
+        color: #333;
+    }
+
+    table tbody tr:hover {
+        background-color: #f9f9f9 !important;
+    }
+
+    a:hover {
+        text-decoration: underline !important;
+    }
+
+ 
+    /* Aplicando sombras e estados do teu styles.css se necessário */
+    .card {
+        box-shadow: var(--shadow-sm);
+    }
+    button:not(:disabled):hover {
+        opacity: 0.9;
+    }
+
+    
+
+
+

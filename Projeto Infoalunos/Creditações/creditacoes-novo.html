@@ -207,7 +207,168 @@
     </aside>
 
     <!-- Main content -->
-    <main class="main-content page-content">
+    <div class="main-content">
+    <input type="radio" name="tabs-cred" id="tab-novo" class="req-tab-radio" checked>
+    <input type="radio" name="tabs-cred" id="tab-plano" class="req-tab-radio">
+    <input type="radio" name="tabs-cred" id="tab-doc" class="req-tab-radio">
+
+    <div class="req-tabs" style="margin-bottom: 0; border-bottom: none;">
+        <label for="tab-novo" class="req-tab">Novo/Alterar</label>
+        <label for="tab-plano" class="req-tab">Plano de Formação</label>
+        <label for="tab-doc" class="req-tab">Documentos e Histórico</label>
+    </div>
+
+    <div class="card" style="border-top-left-radius: 0; border-top: 1px solid var(--border-color); padding: var(--spacing-md);">
+        
+        <div id="content-novo" class="req-panel">
+            <div style="display: flex; justify-content: flex-end; margin-bottom: var(--spacing-sm);">
+                <button style="background: var(--bg-lighter); border: 1px solid var(--border-color); font-size: 0.75rem; padding: 2px 10px; color: var(--text-dark);">Guardar Processo</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 180px 1fr 150px 1fr; gap: 8px; font-size: 0.75rem; margin-bottom: var(--spacing-md);">
+                <label>Ano Letivo (para escolha do Curso):*</label>
+                <select style="background: var(--bg-light); border: 1px solid var(--border-color);"></select>
+                <label>Justificação Actual:</label>
+                <div style="display: flex; gap: 5px;"><i class="fas fa-user"></i><i class="fas fa-info-circle" style="color: var(--cor-info);"></i></div>
+
+                <label>Curso (a creditar):*</label>
+                <select style="background: var(--bg-light); border: 1px solid var(--border-color);"></select>
+                <label>Justificação para alterar estado:</label>
+                <textarea style="grid-row: span 2; background: var(--bg-light); border: 1px solid var(--border-color); height: 40px;"></textarea>
+
+                <label>Alterar Estado/Pedido:</label>
+                <select style="background: var(--bg-light); border: 1px solid var(--border-color);"></select>
+            </div>
+
+            <div style="border: 1px solid var(--border-color); margin-bottom: 5px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); font-weight: bold; font-size: 0.7rem; text-align: center; background: var(--bg-dark);">
+                    <div style="padding: 4px;">Formação Académica Original</div>
+                    <div style="padding: 4px; border-left: 1px solid var(--border-color);">A Creditar (a preencher pelo Dir. Curso)</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 30px 1fr 1fr; font-size: 0.7rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color); font-weight: bold;">1</div>
+                    <div style="padding: 5px; display: grid; grid-template-columns: 40px 1fr; gap: 3px; border-right: 1px solid var(--border-color);">
+                        <span>Inst.</span><input type="text" style="background: var(--bg-light); border: 1px solid var(--border-color);">
+                        <span>Curso</span><input type="text" style="background: var(--bg-light); border: 1px solid var(--border-color);">
+                        <span>UCurr.</span><input type="text" style="background: var(--bg-light); border: 1px solid var(--border-color);">
+                        <span>Prog.</span>
+                        <select style="background: var(--bg-light); border: 1px solid var(--border-color);">
+                            <option>Erasmus</option><option>Leonardo da Vinci</option><option>Universidade de Laval</option><option>Programa de Bolsas Luso-Brasileiras (Santander)</option><option>Programa Vasco da Gama</option><option>Programa Almeida Garret</option><option>Protocolo DH2</option><option>Programa CMU</option><option>Transição de Plano</option><option>Programa de Bolsas Ibero-Americanas (Santander)</option><option>Protocolo UEA</option><option>Convénio entre a UMa e Universidade Federal de Minas Gerais</option><option>Programa Mobilidade AULP</option><option>Protocolo São Tomé e Príncipe - UMa</option><option>Estudante em situação de emergência humanitária - conflito na Ucrânia</option><option>Protocolo entre a UMa e Universidade de Pádua</option>
+                        </select>
+                    </div>
+                    <div style="padding: 5px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px;">
+                        <div>Ano Letivo:<select style="width:100%"></select></div>
+                        <div>Área:<select style="width:100%"></select></div>
+                        <div>Nível:<select style="width:100%"></select></div>
+                        <div>Class:<input type="text" style="width:100%"></div>
+                        <div>ECTS:<input type="text" style="width:100%"></div>
+                        <div>Estado:<select style="width:100%"></select></div>
+                    </div>
+                </div>
+            </div>
+            <p style="color: var(--cor-perigo); font-size: 0.65rem; font-weight: bold; margin: 0 0 15px 0;">"E": Formação Externa. Quando tem esta indicação a formação não é da Universidade da Madeira e deve ser verificada.</p>
+
+            <div style="border: 1px solid var(--border-color); margin-bottom: 15px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); font-weight: bold; font-size: 0.7rem; text-align: center; background: var(--bg-dark);">
+                    <div style="padding: 4px;">Formação Não Académica</div>
+                    <div style="padding: 4px; border-left: 1px solid var(--border-color);">A Creditar (a preencher pelo Dir. Curso)</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 30px 1fr 1fr; font-size: 0.7rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color); font-weight: bold;">1</div>
+                    <div style="padding: 5px; border-right: 1px solid var(--border-color);">
+                        <span>Descrição:</span><textarea style="width:100%; height:30px; background: var(--bg-light); border: 1px solid var(--border-color);"></textarea>
+                        <div style="margin-top:3px;">Prog. 
+                            <select style="width:80%; background: var(--bg-light); border: 1px solid var(--border-color);">
+                                <option>Erasmus</option><option>Transição de Plano</option> </select>
+                        </div>
+                    </div>
+                    <div style="padding: 5px; display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px;">
+                        <div>Ano Letivo:<select style="width:100%"></select></div>
+                        <div>Área:<select style="width:100%"></select></div>
+                        <div>Nível:<select style="width:100%"></select></div>
+                        <div>ECTS:<input type="text" style="width:100%"></div>
+                        <div>Estado:<select style="width:100%"></select></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="border: 1px solid var(--border-color); margin-bottom: 15px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border-color); font-weight: bold; font-size: 0.7rem; text-align: center; background: var(--bg-dark);">
+                    <div style="padding: 4px;">Módulos/Trabalhos - RESERVADO AOS SERVIÇOS</div>
+                    <div style="padding: 4px; border-left: 1px solid var(--border-color);">A Creditar (a preencher pelo Dir. Curso)</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 30px 1fr 1fr; font-size: 0.7rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color); font-weight: bold;">1</div>
+                    <div style="padding: 5px; border-right: 1px solid var(--border-color);">
+                        <span>Descrição:</span><textarea style="width:100%; height:30px; background: var(--bg-light); border: 1px solid var(--border-color);"></textarea>
+                        <div style="margin-top:3px;">Prog. 
+                            <select style="width:80%; background: var(--bg-light); border: 1px solid var(--border-color);">
+                                <option>Erasmus</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="padding: 5px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 2px;">
+                        <div>Ano Letivo:<select style="width:100%"></select></div>
+                        <div>Área:<select style="width:100%"></select></div>
+                        <div>Nível:<select style="width:100%"></select></div>
+                        <div>Class:<input type="text" style="width:100%"></div>
+                        <div>ECTS:<input type="text" style="width:100%"></div>
+                        <div>Estado:<select style="width:100%"></select></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.7rem; align-items: end;">
+                <div>
+                    Anexar Documento 1: <input type="file" style="margin-bottom: 2px;"><br>
+                    Anexar Documento 2: <input type="file" style="margin-bottom: 2px;"><br>
+                    Anexar Documento 3: <input type="file">
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-weight: bold; margin-bottom: 5px;">Os campos assinalados com * são de preenchimento obrigatório.</p>
+                    <button style="background: var(--bg-lighter); border: 1px solid var(--border-color); padding: 3px 15px; cursor: pointer;">Guardar Processo</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="content-plano" class="req-panel">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem; border: 1px solid var(--border-color);">
+                <thead style="background: var(--bg-dark);">
+                    <tr>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Cód.</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Unidade Curricular</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Ano</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Sem.</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">ECTS</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Tipo</th>
+                        <th style="padding: 5px; border: 1px solid var(--border-color);">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="7" style="padding: 20px; text-align: center; color: var(--text-light);">Selecione um curso para visualizar o plano.</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="content-doc" class="req-panel">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); font-size: 0.75rem;">
+                <div>
+                    <h4 style="color: var(--cor-primaria); font-size: 0.8rem;">Histórico dos Estados do Processo</h4>
+                    <table style="width: 100%; border: 1px solid var(--border-color); border-collapse: collapse;">
+                        <tr style="background: var(--bg-dark);"><th style="padding: 4px;">Data</th><th style="padding: 4px;">Estado</th><th style="padding: 4px;">Utilizador</th></tr>
+                        <tr><td colspan="3" style="text-align: center; padding: 10px;">Sem registos.</td></tr>
+                    </table>
+                </div>
+                <div>
+                    <h4 style="color: var(--cor-primaria); font-size: 0.8rem;">Documentos Associados</h4>
+                    <div style="border: 1px dashed var(--border-color); padding: 15px; text-align: center;">Não foram encontrados ficheiros.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
       <!-- Main content -->
     </main>
     <footer class="site-footer">
