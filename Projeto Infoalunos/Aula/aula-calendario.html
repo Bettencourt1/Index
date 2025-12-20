@@ -208,6 +208,107 @@
 
     <!-- Main content -->
     <main class="main-content page-content">
+      <!-- =======================
+     PESQUISA DE DISCIPLINAS
+     ======================= -->
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Pesquisa de Disciplinas</h2>
+  </div>
+
+  <div class="card-content">
+    <div class="raides-grid">
+      <label for="ano">Ano Lectivo</label>
+      <select id="ano">
+        <option>2024/2025</option>
+        <option>2023/2024</option>
+      </select>
+
+      <label for="disciplina">Disciplina</label>
+      <input
+        id="disciplina"
+        type="text"
+        placeholder="Introduza o nome da disciplina"
+      />
+
+      <div class="raides-parent-sub"></div>
+
+      <div style="grid-column: 1 / -1; text-align: right;">
+        <button class="badge">Pesquisar…</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Calendário</h2>
+
+    <button class="badge">Calendário</button>
+  </div>
+
+  <div class="card-content">
+    <!-- Cabeçalho dos dias -->
+    <div class="calendar-header">
+      <div>Domingo</div>
+      <div>Segunda</div>
+      <div>Terça</div>
+      <div>Quarta</div>
+      <div>Quinta</div>
+      <div>Sexta</div>
+      <div>Sábado</div>
+    </div>
+
+    <!-- Grelha do calendário -->
+    <div class="calendar-grid">
+      <!-- Semana 1 -->
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day"><span>1</span></div>
+      <div class="calendar-day"><span>2</span></div>
+      <div class="calendar-day"><span>3</span></div>
+      <div class="calendar-day"><span>4</span></div>
+      <div class="calendar-day"><span>5</span></div>
+      <div class="calendar-day"><span>6</span></div>
+
+      <!-- Semana 2 -->
+      <div class="calendar-day"><span>7</span></div>
+      <div class="calendar-day"><span>8</span></div>
+      <div class="calendar-day"><span>9</span></div>
+      <div class="calendar-day"><span>10</span></div>
+      <div class="calendar-day"><span>11</span></div>
+      <div class="calendar-day"><span>12</span></div>
+      <div class="calendar-day"><span>13</span></div>
+
+      <!-- Semana 3 -->
+      <div class="calendar-day"><span>14</span></div>
+      <div class="calendar-day"><span>15</span></div>
+      <div class="calendar-day"><span>16</span></div>
+      <div class="calendar-day"><span>17</span></div>
+      <div class="calendar-day"><span>18</span></div>
+      <div class="calendar-day"><span>19</span></div>
+      <div class="calendar-day"><span>20</span></div>
+
+      <!-- Semana 4 -->
+      <div class="calendar-day"><span>21</span></div>
+      <div class="calendar-day"><span>22</span></div>
+      <div class="calendar-day"><span>23</span></div>
+      <div class="calendar-day"><span>24</span></div>
+      <div class="calendar-day"><span>25</span></div>
+      <div class="calendar-day"><span>26</span></div>
+      <div class="calendar-day"><span>27</span></div>
+
+      <!-- Semana 5 -->
+      <div class="calendar-day"><span>28</span></div>
+      <div class="calendar-day"><span>29</span></div>
+      <div class="calendar-day"><span>30</span></div>
+      <div class="calendar-day"><span>31</span></div>
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day empty"></div>
+      <div class="calendar-day empty"></div>
+    </div>
+  </div>
+</div>
+
       <!-- Main content -->
     </main>
     <footer class="site-footer">

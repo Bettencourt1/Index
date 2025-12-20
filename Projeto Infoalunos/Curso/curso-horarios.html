@@ -210,12 +210,68 @@
 
 		<!-- Main content -->
 		<main class="main-content page-content">
-			<div class="card">
-				<div class="card-header"><h4 class="card-title">Horários</h4></div>
-				<div class="card-content">
-					<p>Horários do curso serão colocados aqui.</p>
-				</div>
-			</div>
+			
+        
+
+    <div class="card">
+    <div class="card-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: var(--spacing-md);">
+        <div style="display: flex; gap: var(--spacing-sm); align-items: center;">
+            <button class="badge" style="background: none; border: 1px solid var(--cor-primaria); color: var(--cor-primaria); padding: 5px 15px; border-radius: 20px; cursor: pointer;">Hoje</button>
+            <div style="color: var(--cor-primaria); font-weight: var(--font-weight-semibold); margin-left: var(--spacing-md);">
+                &lt; &gt; &nbsp; 15 dez. - 21 dez. 2025
+            </div>
+        </div>
+        <div style="display: flex; gap: 2px;">
+            <button class="badge" style="background-color: var(--cor-primaria); border-radius: 4px 0 0 4px; padding: 8px 18px; border: none;">Aulas</button>
+            <button class="badge" style="background-color: var(--bg-light); color: var(--cor-primaria); border: 1px solid var(--cor-primaria); border-radius: 0 4px 4px 0; padding: 8px 18px;">Avaliação</button>
+        </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 60px repeat(5, 1fr); background-color: var(--bg-light); border: 1px solid var(--border-color);">
+        
+        <div style="border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"></div>
+        <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"><strong>15</strong><br><small>SEGUNDA-FEIRA</small></div>
+        <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"><strong>16</strong><br><small>TERÇA-FEIRA</small></div>
+        <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"><strong>17</strong><br><small>QUARTA-FEIRA</small></div>
+        <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"><strong>18</strong><br><small>QUINTA-FEIRA</small></div>
+        <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color);"><strong>19</strong><br><small>SEXTA-FEIRA</small></div>
+
+        <div style="display: grid; grid-template-rows: repeat(28, 30px); border-right: 1px solid var(--border-color); font-size: 0.75rem; color: var(--text-light); text-align: center;">
+            <div style="height: 30px;">07:30</div><div style="height: 30px;">08:00</div><div style="height: 30px;">08:30</div><div style="height: 30px;">09:00</div>
+            <div style="height: 30px;">09:30</div><div style="height: 30px;">10:00</div><div style="height: 30px;">10:30</div><div style="height: 30px;">11:00</div>
+            <div style="height: 30px;">11:30</div><div style="height: 30px;">12:00</div><div style="height: 30px;">12:30</div><div style="height: 30px;">13:00</div>
+            <div style="height: 30px;">13:30</div><div style="height: 30px;">14:00</div><div style="height: 30px;">14:30</div><div style="height: 30px;">15:00</div>
+            <div style="height: 30px;">15:30</div><div style="height: 30px;">16:00</div><div style="height: 30px;">16:30</div><div style="height: 30px;">17:00</div>
+            <div style="height: 30px;">17:30</div><div style="height: 30px;">18:00</div><div style="height: 30px;">18:30</div><div style="height: 30px;">19:00</div>
+            <div style="height: 30px;">19:30</div><div style="height: 30px;">20:00</div><div style="height: 30px;">20:30</div><div style="height: 30px;">21:00</div>
+        </div>
+
+        <div style="grid-column: 2 / span 5; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(28, 30px); background-image: linear-gradient(var(--border-color) 1px, transparent 1px); background-size: 100% 30px; position: relative;">
+            
+            <div class="badge" style="grid-area: 2 / 1 / 4 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
+            <div class="badge" style="grid-area: 4 / 1 / 8 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Intro. Programação</b><br><small>Sala 29</small></div>
+            <div class="badge" style="grid-area: 8 / 1 / 10 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-12:00<br><b>Intro. Programação</b></div>
+            <div class="badge" style="grid-area: 21 / 1 / 28 / 2; background-color: #f6c485; margin: 2px; padding: 10px; text-align: left; font-weight: normal; color: var(--text-dark);">17:30-21:00<br><b>Design Hipermédia</b><br><small>Sala 34</small></div>
+
+            <div class="badge" style="grid-area: 8 / 3 / 12 / 4; background-color: #69c4c4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-13:00<br><b>Téc. Expressão Port.</b><br><small>Sala 21</small></div>
+            <div class="badge" style="grid-area: 14 / 3 / 18 / 4; background-color: #e87a67; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">14:00-16:00<br><b>Sist. Operativos e Redes</b><br><small>Lab 2</small></div>
+            <div class="badge" style="grid-area: 18 / 3 / 20 / 4; background-color: #f6c485; margin: 2px; padding: 5px; text-align: left; font-weight: normal; color: var(--text-dark);">16:00-17:00<br><b>Design Hipermédia</b></div>
+
+            <div class="badge" style="grid-area: 4 / 4 / 8 / 5; background-color: #e87a67; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Sist. Operativos e Redes</b></div>
+            <div class="badge" style="grid-area: 18 / 4 / 22 / 5; background-color: #74a9e8; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">16:00-18:00<br><b>Matemática</b><br><small>Sala 16</small></div>
+            <div class="badge" style="grid-area: 22 / 4 / 26 / 5; background-color: #69c4c4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">18:00-20:00<br><b>Téc. Expressão Port.</b></div>
+
+            <div class="badge" style="grid-area: 2 / 5 / 4 / 6; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
+            <div class="badge" style="grid-area: 4 / 5 / 10 / 6; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-12:00<br><b>Intro. Programação</b><br><small>Sala 31</small></div>
+            <div class="badge" style="grid-area: 18 / 5 / 22 / 6; background-color: #74a9e8; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">16:00-18:00<br><b>Matemática</b><br><small>Sala 25</small></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; gap: var(--spacing-md); padding: var(--spacing-lg);">
+        <button class="badge" style="background-color: var(--cor-primaria); padding: 10px 25px; border: none; cursor: pointer;">Consultar outros horários</button>
+        <button class="badge" style="background-color: var(--cor-primaria); padding: 10px 25px; border: none; cursor: pointer;">Consultar horário mensal</button>
+    </div>
+</div>
 		</main>
 
 		<!-- Footer -->

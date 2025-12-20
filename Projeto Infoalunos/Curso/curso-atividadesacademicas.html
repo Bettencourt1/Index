@@ -176,12 +176,77 @@
 		  </nav>
 		</aside>
 		<main class="main-content page-content">
-			<div class="card">
-				<div class="card-header"><h4 class="card-title">Atividades Académicas</h4></div>
-				<div class="card-content">
-					<p>Conteúdo sobre atividades académicas do curso será colocado aqui.</p>
-				</div>
-			</div>
+			<main class="main-content page-content">
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Editar Actividade Académicas do Aluno</h2>
+        </div>
+        <div class="card-content">
+            <p style="font-size: 0.65rem; line-height: 1.5; color: var(--text-dark);">
+                Nesta área o aluno deve introduzir, caso existam, as actividades académicas (no máximo de cinco, de acordo com a Recomendação nº1/2008 do CRUP) em que esteve envolvido de modo a que possam ser incluídas no Suplemento ao Diploma (apenas para os cursos adaptados a Bolonha). As actividades são descritas em Português 🇵🇹 e Inglês 🇬🇧 devendo ser entregues, posteriormente, ao Director de Curso os documentos comprovativos das mesmas.
+            </p>
+            <p style="font-size: 0.65rem; line-height: 1.5; color: var(--text-dark); margin-top: 10px;">
+                No Sidoc (https://sidoc.uma.pt) o Director de Curso, a partir dos documentos entregues, confirma as actividades introduzidas pelo aluno bloqueando-as, remetendo em seguida os documentos para o Sector Académico, onde serão anexados ao respectivo processo.
+            </p>
+            <p style="font-size: 0.65rem; line-height: 1.5; color: var(--text-dark); margin-top: 10px;">
+                Posteriormente o Sector Académico, antes de emitir o Suplemento ao Diploma, valida as actividades confirmadas pelo Director de Curso.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Actividade 1</h2>
+        </div>
+        <div class="card-content">
+            <form style="display: grid; gap: 15px;">
+                
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 2;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Tipo de Actividade:</label>
+                        <select style="width: 100%;"><option></option></select>
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Data Início (AAAA-MM-DD)</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Data Fim (AAAA-MM-DD)</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Local (PT) 🇵🇹</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Local (EN) 🇬🇧</label>
+                        <input type="text" style="width: 100%;">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Descrição (PT)</label>
+                        <textarea rows="3" style="width: 100%;"></textarea>
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 0.65rem; font-weight: bold; display: block; margin-bottom: 5px;">Descrição (EN)</label>
+                        <textarea rows="3" style="width: 100%;"></textarea>
+                    </div>
+                </div>
+
+                <div style="margin-top: 10px;">
+                    <button type="submit" class="badge" style="cursor: pointer;">Guardar Actividade</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</main>
 		</main>
 
 		<!-- Footer -->

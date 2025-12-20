@@ -176,12 +176,93 @@
 		  </nav>
 		</aside>
 		<main class="main-content page-content">
-			<div class="card">
-				<div class="card-header"><h4 class="card-title">Transição</h4></div>
-				<div class="card-content">
-					<p>Informações relativas à transição do curso serão colocadas aqui.</p>
-				</div>
-			</div>
+			<main class="main-content page-content">
+
+  <div class="req-tabs-wrapper">
+    <input type="radio" name="req-tab" id="tab-lista" class="req-tab-radio" checked>
+    <input type="radio" name="req-tab" id="tab-submeter" class="req-tab-radio">
+
+    <div class="req-tabs">
+      <label for="tab-lista" class="req-tab">Listagem da Transição</label>
+      <label for="tab-submeter" class="req-tab">Relatórios de Transição</label>
+    </div>
+
+    <div class="req-panels">
+      
+      <div class="req-panel req-panel-lista">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Lista de Transições para Bolonha do Aluno 2137225</h2>
+          </div>
+          <div class="card-content">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: bold; font-size: 0.75rem;">
+              <span style="color: #e74c3c; font-size: 1.2rem;">✖</span> 
+              Não existem registos de Transição para Bolonha para este aluno.
+            </div>
+            <p style="font-size: 0.7rem; color: var(--text-light); margin-top: 10px;">
+              Para qualquer dúvida contacte o Sector Académico.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="req-panel req-panel-submeter">
+        <div class="card">
+          <div class="card-content" style="display: flex; gap: var(--spacing-lg); padding: 20px;">
+            
+            <div style="flex: 1; border-right: 1px solid var(--border-color); padding-right: 20px;">
+              <h4 style="font-size: 0.8rem; font-weight: bold; margin-bottom: 20px;">Relatórios por Ano Lectivo</h4>
+              <table class="payment-table" style="border: none;">
+                <thead>
+                  <tr style="font-size: 0.65rem; color: var(--text-light);">
+                    <th>Ano Lectivo</th>
+                    <th>Relatório(s):</th>
+                    <th>Formato(s):</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><select style="width: 100%;"><option>2025/26</option></select></td>
+                    <td><select style="width: 100%;"><option>Transição para Bolonha</option></select></td>
+                    <td><select style="width: 100%;"><option>PDF</option></select></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="margin-top: 15px;">
+                <button class="badge">Gerar Relatório >></button>
+              </div>
+            </div>
+
+            <div style="flex: 1.2;">
+              <h4 style="font-size: 0.8rem; font-weight: bold; margin-bottom: 20px;">Relatórios por Curso</h4>
+              <table class="payment-table" style="border: none;">
+                <thead>
+                  <tr style="font-size: 0.65rem; color: var(--text-light);">
+                    <th>Ano Lectivo</th>
+                    <th>Curso:</th>
+                    <th>Relatório(s):</th>
+                    <th>Formato(s):</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><select style="width: 100%;"><option>2025/26</option></select></td>
+                    <td><select style="width: 100%;"><option></option></select></td>
+                    <td><select style="width: 100%;"><option>Regras de Transição (Bolonha)</option></select></td>
+                    <td><select style="width: 100%;"><option>PDF</option></select></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="margin-top: 15px;">
+                <button class="badge">Gerar Relatório >></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div> </div> </main>
 		</main>
 
 		<!-- Footer -->

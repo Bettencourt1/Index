@@ -208,6 +208,100 @@
 
     <!-- Main content -->
     <main class="main-content page-content">
+      <!-- =======================
+     PESQUISA DE DISCIPLINAS
+     ======================= -->
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Pesquisa de Disciplinas</h2>
+  </div>
+
+  <div class="card-content">
+    <div class="raides-grid">
+      <label for="ano">Ano Lectivo</label>
+      <select id="ano">
+        <option>2024/2025</option>
+        <option>2023/2024</option>
+      </select>
+
+      <label for="disciplina">Disciplina</label>
+      <input
+        id="disciplina"
+        type="text"
+        placeholder=""
+      />
+
+      <div style="grid-column: 1 / -1; text-align: right;">
+        <button class="badge">Pesquisar...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =======================
+     LISTA DE TURMA E AULAS
+     ======================= -->
+<div class="card">
+  <div class="card-header">
+    <h2 class="card-title">Lista de Turma e Aulas</h2>
+  </div>
+
+  <div class="card-content">
+    <div class="raides-grid">
+      <label for="turmas">Turmas</label>
+      <input id="turmas" type="text" />
+
+      <label for="aulas">Aulas</label>
+      <input id="aulas" type="text" />
+
+      <div style="grid-column: 1 / -1; text-align: right;">
+        <button class="badge">Carregar...</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =======================
+     PROGRAMA + SUMÁRIO
+     ======================= -->
+<div class="card">
+  <div class="card-content two-columns">
+
+    <!-- Programa -->
+    <div>
+      <h3 class="section-title">Lista de Programa - Aula</h3>
+
+      <div class="info-box">
+        <span class="info-icon">ℹ️</span>
+        Não existem tópicos associados ao programa. Selecione uma aula.
+      </div>
+    </div>
+
+    <!-- Sumário -->
+    <div>
+      <h3 class="section-title">Sumário - Tópicos</h3>
+
+      <div class="info-box">
+        <span class="info-icon">ℹ️</span>
+        Não existem tópicos associados ao sumário. Selecione uma aula.
+      </div>
+
+      <h4 class="subsection-title">Estado da Aula</h4>
+      <div class="info-box">
+        <span class="info-icon">ℹ️</span>
+        Selecione uma aula.
+      </div>
+
+      <h4 class="subsection-title">Sumário - Dados</h4>
+      <div class="info-box">
+        <span class="info-icon">ℹ️</span>
+        Não existem dados associados ao sumário da aula!
+      </div>
+    </div>
+
+  </div>
+</div>
+
       <!-- Main content -->
     </main>
     <footer class="site-footer">
