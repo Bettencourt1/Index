@@ -175,14 +175,163 @@
 			</ul>
 		  </nav>
 		</aside>
+		<!-- Pesquisa Instituições/Unidades -->
 		<main class="main-content page-content">
-			<div class="card">
-				<div class="card-header"><h4 class="card-title">Estrutura da Instituição</h4></div>
-				<div class="card-content">
-					<p>Informação sobre a estrutura da instituição será colocada aqui.</p>
-				</div>
-			</div>
-		</main>
+<!-- Pesquisa Instituições/Unidades -->
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Pesquisa Instituições/Unidades da UMa</h4>
+  </div>
+
+  <div class="card-content">
+    <div class="card-grid">
+      <div>
+        <label for="instituicao">Instituição/Unidade da UMa:</label>
+        <select id="instituicao" style="width: 100%;">
+          <option selected>Universidade da Madeira</option>
+        </select>
+
+        <div style="margin-top: var(--spacing-md); display: flex; flex-direction: column; gap: var(--spacing-sm);">
+          <label><input type="checkbox" /> Ver Sub-Instituições/Unidades</label>
+          <label><input type="checkbox" /> Ver Cargos/Pessoas</label>
+        </div>
+
+        <button class="btn" style="margin-top: var(--spacing-md);">Carregar</button>
+      </div>
+
+      <div>
+        <h4 class="section-title">Pesquisa Instituições Externas ou Outras</h4>
+        <p class="card-content">...</p>
+
+        <h4 class="section-title mt-sm">Lista de Instituições/Unidades</h4>
+        <p><strong>Universidade da Madeira (Detalhe)</strong></p>
+        <p><a href="#">expandir lista</a> | <a href="#">fechar lista</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lista de Instituições -->
+<div class="card" style="margin-top: var(--spacing-lg);">
+  <div class="card-header">
+    <h4 class="card-title">Lista de Instituições/Unidades</h4>
+  </div>
+
+  <div class="card-content">
+    <ul style="list-style: none; padding: 0; margin: 0;">
+      <li style="margin-bottom: var(--spacing-sm);">
+        Universidade da Madeira <a href="#" style="margin-left: var(--spacing-sm);">[Detalhe]</a>
+      </li>
+    </ul>
+
+    <p style="margin-top: var(--spacing-sm);">
+      <a href="#">expandir lista</a> | <a href="#">fechar lista</a>
+    </p>
+  </div>
+</div>
+
+<!-- TABS FUNCIONAIS -->
+<div class="req-tabs-wrapper" style="margin-top: var(--spacing-lg);">
+
+  <!-- Radios -->
+  <input type="radio" name="tab-instituicao" id="tab-lista" class="req-tab-radio" checked>
+  <input type="radio" name="tab-instituicao" id="tab-submeter" class="req-tab-radio">
+  <input type="radio" name="tab-instituicao" id="tab-novo" class="req-tab-radio">
+  <input type="radio" name="tab-instituicao" id="tab-plano" class="req-tab-radio">
+
+  <!-- Labels -->
+  <div class="req-tabs">
+    <label for="tab-lista" class="req-tab">Dados Gerais/Ficheiros</label>
+    <label for="tab-submeter" class="req-tab">Cargos/Áreas</label>
+  </div>
+
+  <!-- Panels -->
+  <div class="req-panels">
+
+    <!-- Dados Gerais -->
+    <div class="req-panel req-panel-lista">
+      <div class="card">
+        <div class="card-header"><h4 class="card-title">Dados Gerais</h4></div>
+        <div class="card-content card-grid">
+          <div>
+            <h4 class="section-title">Dados da Instituição/Unidade</h4>
+            <p><strong>Designação:</strong></p>
+            <p><strong>Sigla:</strong></p>
+            <p><strong>Cod. MCTES:</strong></p>
+            <p><strong>Data Início:</strong></p>
+            <p><strong>Data Fim:</strong></p>
+            <p><strong>Nível:</strong></p>
+            <p><strong>Missão:</strong></p>
+          </div>
+          <div>
+            <h4 class="section-title">Contactos</h4>
+            <p><strong>Tlf:</strong></p>
+            <p><strong>Página Web:</strong></p>
+            <p><strong>Cod. Postal:</strong></p>
+            <p><strong>Morada:</strong></p>
+            <h4 class="section-title mt-sm">Dados em Inglês</h4>
+            <p><strong>Designação (ENG):</strong></p>
+            <p><strong>Acr. (ENG):</strong></p>
+            <p><strong>Missão (ENG):</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cargos -->
+    <div class="req-panel req-panel-submeter">
+      <div class="card">
+        <div class="card-header"><h4 class="card-title">Cargos</h4></div>
+        <div class="card-content">
+          <h4 class="section-title">Lista de Pessoas com Cargos</h4>
+          <div class="two-columns">
+            <div>
+              <label>Cargo:</label>
+              <select><option>-- Selecionar --</option></select>
+            </div>
+            <div>
+              <label>Nome:</label>
+              <select><option>-- Selecionar --</option></select>
+            </div>
+          </div>
+          <p class="mt-sm"><em>Sem resultados.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ficheiros (usa a mesma classe do primeiro tab) -->
+    <div class="req-panel req-panel-lista">
+      <div class="card">
+        <div class="card-header"><h4 class="card-title">Ficheiros</h4></div>
+        <div class="card-content">
+          <h4 class="section-title">Lista de Ficheiros Associados à Instituição/Unidade</h4>
+          <p><em>Não foram encontrados ficheiros.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Áreas (usa a mesma classe do segundo tab) -->
+    <div class="req-panel req-panel-submeter">
+      <div class="card">
+        <div class="card-header"><h4 class="card-title">Áreas</h4></div>
+        <div class="card-content">
+          <h4 class="section-title">Lista de Áreas Científicas da Instituição/Unidade</h4>
+          <p><em>🔒 Sem resultados.</em></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
 
 		<!-- Footer -->
 		<footer class="site-footer">

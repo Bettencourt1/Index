@@ -840,3 +840,113 @@ html, body { overflow-x: hidden; }
   .header-profile-links { flex-wrap: nowrap; padding: 0; }
   .header-profile-links > * { display: inline-flex !important; font-size: 1rem; padding: 0 0.5rem; }
 }
+
+/* ===== Tabs: patch para creditacoes-novo (radio-driven tabs, CSS-only) =====
+   - Mostra o painel correcto quando o radio correspondente estiver checked
+   - Aplica estilo "activo" à label correspondente
+   - Mantém acessibilidade com role="tabpanel"/aria-controls quando possível
+*/
+
+/* escondemos os radios visualmente mas mantemos acesso via label */
+.req-tab-radio {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* painéis por defeito escondidos */
+.req-panel {
+  display: none;
+}
+
+/* Mostrar o painel correspondente quando o radio está checked
+   usamos ~ (sibling) porque os radios estão antes do .card no DOM */
+#tab-novo:checked ~ .card #content-novo,
+#tab-plano:checked ~ .card #content-plano,
+#tab-doc:checked ~ .card #content-doc {
+  display: block !important;
+}
+
+/* Estilo visual do tab activo (a label correspondente) */
+#tab-novo:checked ~ .req-tabs label[for="tab-novo"],
+#tab-plano:checked ~ .req-tabs label[for="tab-plano"],
+#tab-doc:checked  ~ .req-tabs label[for="tab-doc"] {
+  background-color: var(--bg-light);
+  color: var(--cor-primaria);
+  border-bottom: 1px solid var(--bg-light);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Pequeno ajuste: garantir que as labels se comportam como botões de tab */
+.req-tabs label.req-tab {
+  cursor: pointer;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  transition: var(--transition-fast);
+}
+
+/* Hover das labels (melhora UX) */
+.req-tabs label.req-tab:hover {
+  background: var(--bg-lighter);
+}
+
+/* Segurança: se houver regras conflitantes, tornamos estas com especificidade suficiente */
+.card #content-novo,
+.card #content-plano,
+.card #content-doc { box-sizing: border-box; }
+
+/* Se tiveres outra regra global escondendo .req-panel com !important, remove-a
+   ou deixa estas selectors com !important (já aplicado acima para display:block). */
+/* ===== Quick links (botões apenas na index) =====
+   - Garante alinhamento à direita, wrap em telas pequenas
+   - Protege cor de texto no hover para evitar "desaparecer"
+*/
+.quick-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;              /* evita corte em telas pequenas */
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Usa a classe .btn existente; aqui ajustamos para garantir contraste e hover previsível */
+.quick-links .btn {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.9rem;
+  background: var(--cor-primaria);
+  color: #fff !important;       /* força contraste, evita que regras externas o tornem invisível */
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+}
+
+/* Hover / focus: mantém texto visível e escurece levemente o fundo */
+.quick-links .btn:hover,
+.quick-links .btn:focus {
+  background: #004b83;          /* tom um pouco mais escuro */
+  color: #fff !important;
+  text-decoration: none;
+  outline: 2px solid rgba(0,86,160,0.12);
+  outline-offset: 2px;
+}
+
+/* Em telas muito pequenas *reduzimos* o texto e padding para evitar wrap agressivo */
+@media (max-width: 420px) {
+  .quick-links .btn {
+    padding: 0.22rem 0.4rem;
+    font-size: 0.78rem;
+  }
+}
