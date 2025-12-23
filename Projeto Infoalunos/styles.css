@@ -986,3 +986,145 @@ html, body { overflow-x: hidden; }
   border-bottom: 1px solid var(--bg-light);
   font-weight: var(--font-weight-semibold);
 }
+/* ==================== 3. COMPONENTES GERAIS ==================== */
+.card {
+  background-color: light-dark(#fff, #1e1e1e);
+  border: 1px solid light-dark(var(--border-color), #444);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--cor-primaria);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.25rem;
+  border: 1px solid light-dark(var(--border-color), #444);
+  border-radius: 4px;
+  background-color: light-dark(#fff, #2d2d2d);
+  color: light-dark(var(--text-dark), #ddd);
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ==================== 4. LAYOUT ESPECÍFICO DE LOGIN ==================== */
+
+/* Centraliza o card de login no meio da página */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: light-dark(var(--bg-lighter), #121212);
+  padding: var(--spacing-md);
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+  padding: var(--spacing-xl) 3rem;
+  border-top: 5px solid var(--cor-primaria);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.login-container h3 {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--cor-primaria);
+}
+
+.login-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+.login-links label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-links input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  margin-top: 0;
+}
+
+.login-btn-container {
+  margin-top: var(--spacing-2xl);
+}
+
+.login-container p {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* ==================== 5. RESPONSIVIDADE ==================== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: var(--spacing-lg);
+    box-shadow: none;
+  }
+}
+/* 1. Remove qualquer contorno de erro automático do navegador */
+input:invalid {
+    box-shadow: none !important;
+    border-color: var(--border-color);
+}
+
+/* 2. Estilo quando o utilizador está a escrever (sem cores de erro/sucesso ainda) */
+input:focus {
+    outline: none;
+    border-color: var(--cor-primaria) !important;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* 3. Estilo de Sucesso: Quando o campo está preenchido corretamente */
+/* O :user-valid só ativa depois de o utilizador sair do campo ou tentar submeter */
+input:user-valid {
+    border: 2px solid var(--cor-sucesso) !important;
+}
+
+/* 4. Estilo de Erro: Quando o formato do email está errado ou está vazio */
+input:user-invalid {
+    border: 2px solid var(--cor-perigo) !important;
+}
+
+/* 5. Garante que o botão de Entrar parece desativado se o form for inválido (Opcional) */
+form:invalid button {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

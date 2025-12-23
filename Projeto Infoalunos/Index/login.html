@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Acesso à Plataforma</title>
+    <link rel="stylesheet" href="../styles.css"> 
+</head>
+<body class="login-body">
+
+    <div class="card login-container">
+        <h3>Aceda à sua conta</h3>
+
+        <form action="index.html" method="GET">
+    
+    <div class="form-group">
+        <label for="email">Endereço de E-mail</label>
+        <input type="email" id="email" name="email" required 
+               pattern="123@gmail.com" 
+               title="Insira o email correto"
+               placeholder="exemplo@dominio.pt">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Palavra-passe</label>
+        <input type="password" id="password" name="password" required 
+               pattern="123" 
+               title="Palavra-passe incorreta"
+               placeholder="Insira a sua palavra-passe">
+    </div>
+
+    <div class="login-btn-container">
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
+            Entrar
+        </button>
+    </div>
+</form>
+
+    </div>
+
+</body>
+</html>
