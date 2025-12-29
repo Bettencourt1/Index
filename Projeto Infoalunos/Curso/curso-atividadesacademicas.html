@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<!-- Header -->
+	<!-- Cabeçalho -->
 	<header class="app-header">
 		<div class="header-logo">
 			<div class="logo-img"></div>
@@ -44,6 +44,23 @@
 		          <a href="Geral/geral-ajuda.html">Ajuda</a>
 		        </div>
 		      </li>
+
+		  <!-- Serviços -->
+		  <li>
+            <input type="checkbox" id="toggle-servicos" class="submenu-toggle" />
+            <label for="toggle-servicos" class="has-submenu">
+              <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+              <span>Serviços</span>
+            </label>
+            <div id="submenu-servicos" class="submenu-panel">
+              <a href="Serviços/servicos-pagamentos.html">Pagamentos</a>
+              <a href="Serviços/servicos-matriculas.html">Matrículas / Inscrições</a>
+              <a href="Serviços/servicos-inscricao-turmas.html">Inscrição em Turmas</a>
+              <a href="Serviços/servicos-requerimentos.html">Requerimentos</a>
+              <a href="Serviços/servicos-cartao.html">Cartão Universitário</a>
+              <a href="https://www.uma.pt/sobre/servico-apoio-estudantes/accao-social/?IDM=PT&ID0=1765992833&ID1=&ID2=500&ID3=a3dd3c037e3dd8591e08176e8968201a">SASUMa / Bolsas</a>
+            </div>
+          </li>
 
 		  <!-- Concursos -->
 		  <li>
@@ -129,7 +146,7 @@
 
 		  <!-- Curso -->
 		  <li>
-		    <input type="checkbox" id="toggle-curso" class="submenu-toggle" />
+		    <input type="checkbox" id="toggle-curso" class="submenu-toggle" checked />
 		    <label for="toggle-curso" class="has-submenu">
 		      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
 		      <span>Curso</span>
@@ -142,7 +159,7 @@
 		      <a href="Curso/curso-transicao.html">Transição para Bolonha</a>
 		      <a href="Curso/curso-planoconclusao.html">Plano de conclusão</a>
 		      <a href="Curso/curso-quadro.html">Quadro de Prescrição</a>
-		      <a href="Curso/curso-atividadesacademicas.html">Atividades Académicas</a>
+		      <a href="Curso/curso-atividadesacademicas.html" class="active">Atividades Académicas</a>
 		    </div>
 		  </li>
 
@@ -242,7 +259,7 @@
 </main>
 		</main>
 
-		<!-- Footer -->
+		<!-- Rodapé -->
 		<footer class="site-footer">
 			<div class="footer-content">
 				<p>

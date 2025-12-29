@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<!-- Header -->
+	<!-- Cabeçalho -->
 	<header class="app-header">
 		<div class="header-logo">
 			<div class="logo-img"></div>
@@ -152,7 +152,7 @@
 
 		      <!-- Curso -->
 		      <li>
-		        <input type="checkbox" id="toggle-curso" class="submenu-toggle" />
+		        <input type="checkbox" id="toggle-curso" class="submenu-toggle" checked />
 		        <label for="toggle-curso" class="has-submenu">
 		          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
 		            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
@@ -161,7 +161,7 @@
 		        </label>
 		        <div id="submenu-curso" class="submenu-panel">
 		          <a href="Curso/curso-fichacurricular.html">Ficha Curricular</a>
-		          <a href="Curso/curso-horarios.html">Horários</a>
+		          <a href="Curso/curso-horarios.html" class="active">Horários</a>
 		          <a href="Curso/curso-historicomatriculas.html">Histórico de Matrículas-Inscrições</a>
 		          <a href="Curso/curso-historicodisciplinas.html">Histórico de Disciplinas Aprovadas</a>
 		          <a href="Curso/curso-transicao.html">Transição para Bolonha</a>
@@ -201,7 +201,7 @@
 		  </nav>
 		</aside>
 
-		<!-- Main content -->
+		<!-- Conteúdo principal -->
 		<main class="main-content page-content">
 			
         
@@ -229,7 +229,7 @@
         <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color); border-right: 1px solid var(--border-color);"><strong>18</strong><br><small>QUINTA-FEIRA</small></div>
         <div class="text-center" style="padding: 10px; border-bottom: 1px solid var(--border-color);"><strong>19</strong><br><small>SEXTA-FEIRA</small></div>
 
-        <div style="display: grid; grid-template-rows: repeat(28, 30px); border-right: 1px solid var(--border-color); font-size: 0.75rem; color: var(--text-light); text-align: center;">
+        <div style="display: grid; grid-template-rows: repeat(28, 30px); border-right: 1px solid var(--border-color); font-size: 0.75rem; color: var(--text-muted); text-align: center;">
             <div style="height: 30px;">07:30</div><div style="height: 30px;">08:00</div><div style="height: 30px;">08:30</div><div style="height: 30px;">09:00</div>
             <div style="height: 30px;">09:30</div><div style="height: 30px;">10:00</div><div style="height: 30px;">10:30</div><div style="height: 30px;">11:00</div>
             <div style="height: 30px;">11:30</div><div style="height: 30px;">12:00</div><div style="height: 30px;">12:30</div><div style="height: 30px;">13:00</div>
@@ -241,21 +241,21 @@
 
         <div style="grid-column: 2 / span 5; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(28, 30px); background-image: linear-gradient(var(--border-color) 1px, transparent 1px); background-size: 100% 30px; position: relative;">
             
-            <div class="badge" style="grid-area: 2 / 1 / 4 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
-            <div class="badge" style="grid-area: 4 / 1 / 8 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Intro. Programação</b><br><small>Sala 29</small></div>
-            <div class="badge" style="grid-area: 8 / 1 / 10 / 2; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-12:00<br><b>Intro. Programação</b></div>
-            <div class="badge" style="grid-area: 21 / 1 / 28 / 2; background-color: #f6c485; margin: 2px; padding: 10px; text-align: left; font-weight: normal; color: var(--text-dark);">17:30-21:00<br><b>Design Hipermédia</b><br><small>Sala 34</small></div>
+            <div class="badge primary" style="grid-area: 2 / 1 / 4 / 2; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
+            <div class="badge primary" style="grid-area: 4 / 1 / 8 / 2; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Intro. Programação</b><br><small>Sala 29</small></div>
+            <div class="badge primary" style="grid-area: 8 / 1 / 10 / 2; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-12:00<br><b>Intro. Programação</b></div>
+            <div class="badge warning" style="grid-area: 21 / 1 / 28 / 2; margin: 2px; padding: 10px; text-align: left; font-weight: normal; color: var(--text-dark);">17:30-21:00<br><b>Design Hipermédia</b><br><small>Sala 34</small></div>
 
-            <div class="badge" style="grid-area: 8 / 3 / 12 / 4; background-color: #69c4c4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-13:00<br><b>Téc. Expressão Port.</b><br><small>Sala 21</small></div>
-            <div class="badge" style="grid-area: 14 / 3 / 18 / 4; background-color: #e87a67; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">14:00-16:00<br><b>Sist. Operativos e Redes</b><br><small>Lab 2</small></div>
-            <div class="badge" style="grid-area: 18 / 3 / 20 / 4; background-color: #f6c485; margin: 2px; padding: 5px; text-align: left; font-weight: normal; color: var(--text-dark);">16:00-17:00<br><b>Design Hipermédia</b></div>
+            <div class="badge accent" style="grid-area: 8 / 3 / 12 / 4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">11:00-13:00<br><b>Téc. Expressão Port.</b><br><small>Sala 21</small></div>
+            <div class="badge warning" style="grid-area: 14 / 3 / 18 / 4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">14:00-16:00<br><b>Sist. Operativos e Redes</b><br><small>Lab 2</small></div>
+            <div class="badge warning" style="grid-area: 18 / 3 / 20 / 4; margin: 2px; padding: 5px; text-align: left; font-weight: normal; color: var(--text-dark);">16:00-17:00<br><b>Design Hipermédia</b></div>
 
-            <div class="badge" style="grid-area: 4 / 4 / 8 / 5; background-color: #e87a67; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Sist. Operativos e Redes</b></div>
+            <div class="badge warning" style="grid-area: 4 / 4 / 8 / 5; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-11:00<br><b>Sist. Operativos e Redes</b></div>
             <div class="badge" style="grid-area: 18 / 4 / 22 / 5; background-color: #74a9e8; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">16:00-18:00<br><b>Matemática</b><br><small>Sala 16</small></div>
-            <div class="badge" style="grid-area: 22 / 4 / 26 / 5; background-color: #69c4c4; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">18:00-20:00<br><b>Téc. Expressão Port.</b></div>
+            <div class="badge accent" style="grid-area: 22 / 4 / 26 / 5; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">18:00-20:00<br><b>Téc. Expressão Port.</b></div>
 
-            <div class="badge" style="grid-area: 2 / 5 / 4 / 6; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
-            <div class="badge" style="grid-area: 4 / 5 / 10 / 6; background-color: #8389c9; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-12:00<br><b>Intro. Programação</b><br><small>Sala 31</small></div>
+            <div class="badge primary" style="grid-area: 2 / 5 / 4 / 6; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">08:00-09:00<br><b>Intro. Programação</b></div>
+            <div class="badge primary" style="grid-area: 4 / 5 / 10 / 6; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">09:00-12:00<br><b>Intro. Programação</b><br><small>Sala 31</small></div>
             <div class="badge" style="grid-area: 18 / 5 / 22 / 6; background-color: #74a9e8; margin: 2px; padding: 5px; text-align: left; font-weight: normal;">16:00-18:00<br><b>Matemática</b><br><small>Sala 25</small></div>
         </div>
     </div>
@@ -267,7 +267,7 @@
 </div>
 		</main>
 
-		<!-- Footer -->
+		<!-- Rodapé -->
 		<footer class="site-footer">
 			<div class="footer-content">
 				<p>

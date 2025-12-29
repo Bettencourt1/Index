@@ -199,7 +199,7 @@
       </nav>
     </aside>
 
-    <!-- Main content -->
+    <!-- Conteúdo principal -->
     <div class="main-content">
     
     <div style="margin-bottom: var(--spacing-lg);">
@@ -210,7 +210,7 @@
 
     <div style="text-align: center; margin-bottom: var(--spacing-lg);">
         <h2 style="color: var(--cor-primaria); font-size: 1.2rem; margin-bottom: var(--spacing-md);">Documentos / Declarações Sociais</h2>
-        <p style="font-size: 0.8rem; color: var(--text-light); line-height: 1.5; padding: 0 10px;">
+        <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; padding: 0 10px;">
             A emissão dos documentos relativos a declarações sociais é imediata, sendo gerada pelo sistema de forma automática. Outro tipo de declarações devem ser solicitadas através do menu Serviços > Requerimentos > Submeter novo/Detalhe.
         </p>
     </div>
@@ -219,10 +219,10 @@
         
         <div class="card" style="flex: 1 1 280px; max-width: 320px; text-align: center; padding: var(--spacing-lg);">
             <div style="margin-bottom: 15px;">
-                <i class="far fa-file-alt" style="font-size: 3rem; color: #ccc;"></i>
+                <i class="far fa-file-alt icon-lg icon-muted"></i>
             </div>
             <p style="font-size: 0.85rem; min-height: 45px;">Declaração de aproveitamento para fins sociais</p>
-            <button disabled style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: #ccc; color: #fff; cursor: not-allowed;">Emitir</button>
+            <button disabled class="btn disabled" style="width: 100%; padding: 10px; border-radius: 4px;">Emitir</button>
         </div>
 
         <div class="card" style="flex: 1 1 280px; max-width: 320px; text-align: center; padding: var(--spacing-lg);">
@@ -230,13 +230,13 @@
                 <i class="far fa-file-alt" style="font-size: 3rem; color: var(--cor-primaria);"></i>
             </div>
             <p style="font-size: 0.85rem; min-height: 45px;">Declaração de matrícula para fins sociais</p>
-            <button style="width: 100%; padding: 10px; border: none; border-radius: 4px; background-color: var(--cor-primaria); color: #fff; cursor: pointer;">Emitir</button>
+            <button class="btn primary" style="width: 100%; padding: 10px; border-radius: 4px;">Emitir</button>
         </div>
     </div>
 
-    <div style="background-color: #fff9e6; border: 1px solid #ffeeba; border-radius: 4px; padding: 15px; display: flex; gap: 10px; margin-bottom: var(--spacing-xl); align-items: flex-start;">
-        <i class="fas fa-exclamation-triangle" style="color: #856404; margin-top: 3px;"></i>
-        <div style="font-size: 0.8rem; color: #856404; flex-grow: 1;">
+    <div class="alert-warning" style="margin-bottom: var(--spacing-xl);">
+        <i class="fas fa-exclamation-triangle text-warning" style="margin-top: 3px;"></i>
+        <div class="text-warning" style="font-size: 0.8rem; flex-grow: 1;">
             Não é possível emitir a Declaração de aproveitamento para fins sociais. Só é possível emitir a declaração quando não tiver pagamentos em falta no ano letivo 2025/26.
         </div>
     </div>
@@ -251,8 +251,8 @@
             <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
                 <thead>
                     <tr style="border-bottom: 1px solid var(--border-color); background-color: var(--bg-dark);">
-                        <th style="padding: 12px; text-align: left; font-size: 0.7rem; color: var(--text-light); text-transform: uppercase;">Declaração</th>
-                        <th style="padding: 12px; text-align: right; font-size: 0.7rem; color: var(--text-light); text-transform: uppercase; width: 150px;">Data de Emissão</th>
+                        <th style="padding: 12px; text-align: left; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase;">Declaração</th>
+                        <th style="padding: 12px; text-align: right; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; width: 150px;">Data de Emissão</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -260,11 +260,11 @@
                         <td style="padding: 15px;">
                             <div style="display: flex; align-items: center; gap: 12px;">
                                 <div style="padding: 8px; background: var(--bg-lighter); border-radius: 4px;">
-                                    <i class="fas fa-file-pdf" style="color: #d32f2f;"></i>
+                                    <i class="fas fa-file-pdf text-danger"></i>
                                 </div>
                                 <div>
                                     <div style="font-weight: var(--font-weight-semibold); font-size: 0.85rem; color: var(--text-dark);">Declaração de matrícula para fins sociais</div>
-                                    <div style="color: var(--text-light); font-size: 0.7rem;">2025/26 - TECNOLOGIAS E PROGRAMAÇÃO DE SISTEMAS DE INFORMAÇÃO</div>
+                                    <div style="color: var(--text-muted); font-size: 0.7rem;">2025/26 - TECNOLOGIAS E PROGRAMAÇÃO DE SISTEMAS DE INFORMAÇÃO</div>
                                 </div>
                             </div>
                         </td>
@@ -280,7 +280,7 @@
 </div>
 
 
-      <!-- Main content -->
+      <!-- Conteúdo principal -->
     </main>
     <footer class="site-footer">
       <div class="footer-content">

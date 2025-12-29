@@ -1,50 +1,55 @@
-/* Projeto InfoAlunos — styles.css (versão limpa e organizada)
-   - Consolidei variáveis, removi duplicações e uni as regras de responsive/fixes.
-   - Mantive comportamento desejado:
-     * Desktop: sidebar fixa à esquerda
-     * <=992px: sidebar flui para topo (topbar), sem sobrepor o conteúdo
-     * <=768px: comportamento compatível com regras antigas (170px sidebar fixa)
-     * <=480px: ajustes finais mobile
-   - Submenus abrem com checkbox-toggle/fragment (CSS-only); não há JS.
-   - Ícones da sidebar com tamanho consistente.
+/* Project: InfoAlunos — styles.css
+   Sections: Variables, Reset/Base, Layout, Components, Utilities, Pages, Responsive
+   Keep comments short and in English. Technical names (Grid, Card, Hero) remain in English.
 */
 
 /* =========================
-   Variáveis globais
+   Variables (reduced palette & unified typography)
    ========================= */
 :root{
+  /* Palette (5 colors) */
   --cor-primaria: #0056a0;
+  --cor-primaria-escuro: #004b83;
   --cor-secundaria: #6c757d;
+  --cor-accent: #17a2b8;
   --cor-sucesso: #28a745;
   --cor-perigo: #dc3545;
-  --cor-aviso: #ffc107;
-  --cor-info: #17a2b8;
 
+  /* Neutrals / background / text */
   --bg-light: #ffffff;
+  --bg-lighter: #f6f7f9;
   --bg-dark: #f8f9fa;
-  --bg-lighter: #e9ecef;
   --bg-sidebar-active: #e6f0ff;
-
   --text-dark: #212529;
-  --text-light: #6c757d;
-
+  --text-muted: #6c757d;
   --border-color: #dee2e6;
 
+  /* Warnings */
+  --cor-aviso: #856404; /* text color for warnings */
+  --cor-aviso-bg: #fff9e6; /* background for warning panels */
+  --cor-aviso-border: #ffeeba; /* border color for warnings */
+  --badge-warning-bg: #f6c485; /* badge background for warning */
+
+  /* Spacing & shadows */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
   --box-shadow-default: 0 0.125rem 0.25rem rgba(0,0,0,0.075);
-
   --transition-fast: all 0.15s ease-in-out;
 
+  /* Typography: family & sizes */
   --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-size-sm: 0.85rem;
   --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
   --line-height-base: 1.6;
 
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 2rem;
-  --font-size-h3: 1.75rem;
-  --font-size-h4: 1.5rem;
-  --font-size-h5: 1.25rem;
-  --font-size-h6: 1rem;
+  /* Headings sizes */
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-h4: 1rem;
+  --font-size-h5: 0.95rem;
+  --font-size-h6: 0.9rem;
 
   --font-weight-bold: 700;
   --font-weight-semibold: 600;
@@ -54,15 +59,18 @@
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
-  --spacing-xl: 3rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 3.5rem;
 
   --submenu-width: 260px;
   --max-sidebar-width: 250px;
 
-  /* suporte para responsive-topbar */
-  --topbar-height: 0;           /* definido em media queries quando a sidebar vira topbar */
+  /* Responsive topbar support */
+  --topbar-height: 0;
   --content-max-width: 1100px;
 }
+
+
 
 /* =========================
    Reset / Base
@@ -92,6 +100,13 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--text-dark);
 }
 
+h1 { font-size: var(--font-size-h1); }
+h2 { font-size: var(--font-size-h2); }
+h3 { font-size: var(--font-size-h3); }
+h4 { font-size: var(--font-size-h4); }
+h5 { font-size: var(--font-size-h5); }
+h6 { font-size: var(--font-size-h6); }
+
 p { margin: 0 0 var(--spacing-md); }
 
 a {
@@ -99,7 +114,7 @@ a {
   text-decoration: none;
   transition: var(--transition-fast);
 }
-a:hover { color: #0056b3; text-decoration: underline; }
+a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
 
 /* =========================
    Layout: grid with sidebar + header
@@ -134,7 +149,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
   border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  padding-top: 50px; /* espaço para o header fixo */
+  padding-top: 50px; /* reserve space for fixed header */
   grid-row: 1 / -1;
   align-self: stretch;
   min-height: 0;
@@ -213,7 +228,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 .submenu-toggle:checked + label { background-color: var(--bg-sidebar-active); color: var(--cor-primaria); font-weight: var(--font-weight-semibold); }
 .submenu-toggle:checked + label + .submenu-panel { display: block; }
 
-/* Icon sizing inside nav (consistent) */
+/* Nav icon sizing */
 .sidebar-nav .nav-icon,
 .sidebar-nav svg,
 .sidebar-nav img,
@@ -230,7 +245,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 }
 
 /* =========================
-   Main content + cards + grids
+   Main Content / Cards / Grid
    ========================= */
 .main-content {
   display: grid;
@@ -248,7 +263,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 .card {
   background-color: var(--bg-light);
   border: 1px solid var(--border-color);
-  border-radius: 0.25rem;
+  border-radius: 8px;
   padding: var(--spacing-md);
   display: flex;
   flex-direction: column;
@@ -263,7 +278,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
   padding-bottom: var(--spacing-sm);
 }
 .card-title { font-size: var(--font-size-h5); font-weight: var(--font-weight-semibold); color: var(--text-dark); margin: 0; }
-.card-content { font-size: 0.95rem; color: var(--text-light); }
+.card-content { font-size: 0.95rem; color: var(--text-muted); }
 
 /* Grid helpers */
 .card-grid, .card-grid-bottom {
@@ -274,15 +289,53 @@ a:hover { color: #0056b3; text-decoration: underline; }
 }
 .card-grid-bottom { flex-grow: 1; }
 
-/* Utilities */
+/* ==================== 05. UTILITIES ==================== */
+/* Utilities: small reusable helpers; prefer utilities over repeated rules */
 .text-center { text-align: center; }
 .mt-0 { margin-top: 0; }
 .mt-sm { margin-top: var(--spacing-sm); }
 .mb-sm { margin-bottom: var(--spacing-sm); }
-.hide-mobile { display: none; }
-.show-mobile { display: none; }
 
-/* Buttons */
+/* Color & text utilities */
+.text-primary { color: var(--cor-primaria) !important; }
+.text-muted { color: var(--text-muted) !important; }
+.text-success { color: var(--cor-sucesso) !important; }
+.text-danger { color: var(--cor-perigo) !important; }
+.text-warning { color: var(--cor-aviso) !important; }
+.bg-primary { background-color: var(--cor-primaria) !important; color: #fff !important; }
+.bg-light { background-color: var(--bg-light) !important; }
+
+/* Badges */
+.badge { display: inline-flex; gap: 0.4rem; align-items: center; padding: 0.25rem 0.5rem; border-radius: 6px; background: var(--bg-lighter); border: 1px solid var(--border-color); font-size: var(--font-size-sm); }
+
+/* Color utility replacements */
+.btn.disabled,
+button[disabled] { background: #ccc; color: #fff; cursor: not-allowed; opacity: 0.8; border: none; }
+
+
+
+.alert-warning { background: var(--cor-aviso-bg); border: 1px solid var(--cor-aviso-border); border-radius: 4px; padding: 12px; color: var(--cor-aviso); display:flex; gap: 10px; align-items:flex-start; }
+
+
+
+
+
+/* Button variants (reusable themes) */
+.btn-light { background: var(--bg-lighter); color: var(--text-dark); border: 1px solid var(--border-color); }
+.btn-outline { background: transparent; color: var(--text-dark); border: 1px solid var(--border-color); }
+
+/* Tables */
+.table-row-muted { background-color: var(--bg-light); }
+
+/* Badge color variants (map to palette) */
+.badge.primary { background: var(--cor-primaria); color: #fff; border: none; }
+.badge.success { background: var(--cor-sucesso); color: #fff; border: none; }
+.badge.warning { background: var(--badge-warning-bg); color: var(--text-dark); border: none; }
+.badge.muted { background: var(--bg-light); color: var(--text-dark); border: 1px solid var(--border-color); }
+
+/* Small helpers consolidated; badge utilities defined earlier. Duplicate removed. */
+
+/* Botões */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -298,7 +351,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 }
 .btn.secondary { background: var(--cor-secundaria); color: #fff; }
 
-/* Tables */
+/* Tabelas */
 .payment-table, table {
   width: 100%;
   border-collapse: collapse;
@@ -311,10 +364,10 @@ a:hover { color: #0056b3; text-decoration: underline; }
 }
 .payment-table th { background-color: var(--bg-lighter); position: sticky; top: 0; }
 
-/* Wrapper for wide tables */
+/* Wrapper para tabelas largas (faz scroll horizontal) */
 .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-/* Notices and lists */
+/* Notices & lists */
 .notices-card .card-content { max-height: 300px; overflow-y: auto; padding-right: var(--spacing-sm); flex-grow: 1; }
 .notices-card ul { list-style: none; padding: 0; margin: 0; }
 .notices-card li { margin-bottom: var(--spacing-sm); border-bottom: 1px dotted var(--border-color); padding-bottom: 5px; }
@@ -334,10 +387,10 @@ a:hover { color: #0056b3; text-decoration: underline; }
 .calendar-header div { padding: 6px; text-align: center; border-right: 1px solid var(--border-color); }
 .calendar-header div:last-child { border-right: none; }
 .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-top: var(--spacing-sm); }
-.calendar-day { min-height: 90px; background: linear-gradient(135deg,#f6f6f6,#eaeaea); border-radius:4px; padding:6px; font-size:0.85rem; color:var(--text-light); position:relative; }
+.calendar-day { min-height: 90px; background: linear-gradient(135deg,var(--bg-lighter),var(--bg-light)); border-radius:4px; padding:6px; font-size:0.85rem; color:var(--text-muted); position:relative; }
 .calendar-day span { position:absolute; bottom:6px; right:6px; font-size:0.8rem; opacity:0.8; }
 
-/* Two-columns helper */
+/* Two-column helper */
 .two-columns { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); }
 .section-title { font-size: 0.9rem; font-weight: var(--font-weight-bold); margin-bottom: var(--spacing-sm); }
 .subsection-title { font-size: 0.8rem; font-weight: var(--font-weight-semibold); margin: var(--spacing-md) 0 var(--spacing-sm); }
@@ -346,7 +399,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 .error-page { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; text-align:center; }
 .error-page h1 { font-size: var(--font-size-h1); color: var(--cor-perigo); }
 
-/* Tabs: pure CSS toggle */
+/* Tabs (CSS-only radios/labels) */
 .req-tabs { display:flex; gap:0.5rem; border-bottom:1px solid var(--border-color); margin-bottom: var(--spacing-md); }
 .req-tab { padding:0.5rem 1rem; background:none; border:1px solid var(--border-color); border-bottom:none; border-radius:4px 4px 0 0; cursor:pointer; }
 .req-tab:hover { background: var(--bg-lighter); }
@@ -357,7 +410,7 @@ a:hover { color: #0056b3; text-decoration: underline; }
 #tab-lista:checked ~ .req-panels .req-panel-lista,
 #tab-submeter:checked ~ .req-panels .req-panel-submeter { display:block; }
 
-/* Visual active state for tabs */
+/* Active tab visual state */
 #tab-lista:checked ~ .req-tabs label[for="tab-lista"],
 #tab-submeter:checked ~ .req-tabs label[for="tab-submeter"] {
   background-color: var(--bg-light);
@@ -366,23 +419,23 @@ a:hover { color: #0056b3; text-decoration: underline; }
   font-weight: var(--font-weight-semibold);
 }
 
-/* Inputs valid/invalid */
+/* Inputs: valid / invalid states */
 input:valid { border: 2px solid var(--cor-sucesso); }
 input:invalid { border: 2px solid var(--cor-perigo); }
 
-/* Accessibility / Focus */
+/* Accessibility / Focus (visible indicators for keyboard navigation) */
 a:focus, button:focus, .sidebar-nav a:focus {
   outline: 3px solid rgba(0,86,160,0.15);
   outline-offset: 2px;
 }
 
 /* =========================
-   Responsive
+   RESPONSIVE (breakpoints & tweaks)
    ========================= */
 
 /* <= 992px: topbar behavior (sidebar flows to top; topbar not fixed; content centered) */
 @media (max-width: 992px) {
-  :root { --topbar-height: 56px; } /* ajuste possível conforme altura real */
+  :root { --topbar-height: 56px; } /* adjust if needed */
 
   .app-container {
     grid-template-columns: 1fr;
@@ -448,14 +501,14 @@ a:focus, button:focus, .sidebar-nav a:focus {
   .submenu-toggle:checked + label + .submenu-panel { display: block; }
   .submenu-panel:target { display: block; }
 
-  /* Main content centered and constrained */
+  /* Main content centered and constrained width */
   .main-content {
     width: 100%;
     max-width: var(--content-max-width);
     margin: 0 auto;
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
-    /* header fixed (50px) + topbar in flow (--topbar-height) */
+    /* header fixo (50px) + topbar em fluxo (--topbar-height) */
     padding-top: calc(50px + var(--topbar-height) + var(--spacing-sm)) !important;
     box-sizing: border-box;
     min-width: 0;
@@ -515,22 +568,6 @@ a:focus, button:focus, .sidebar-nav a:focus {
   .main-content { padding-left: 0.75rem; padding-right: 0.75rem; padding-top: calc(50px + var(--topbar-height) + 0.25rem) !important; }
   .sidebar-nav a, .sidebar-nav button, .sidebar-nav label.has-submenu { padding: 0.3rem 0.45rem; min-width: 48px; }
 }
-
-/* =========================
-   Feature queries / advanced
-   ========================= */
-@supports (animation-timeline: auto) {
-  :root { timeline-scope: --page; }
-  html { scroll-timeline-name: --page; scroll-timeline-axis: block; }
-  .app-header {
-    animation: fadeHeader 1s linear both;
-    animation-timeline: --page;
-    animation-range: entry 0% exit 100%;
-  }
-  @keyframes fadeHeader { from { opacity: 1; } to { opacity: 0.8; } }
-}
-@keyframes fadeHeader { from { opacity: 1; } to { opacity: 0.8; } }
-
 /* =========================
    Footer / small utilities
    ========================= */
@@ -543,7 +580,7 @@ a:focus, button:focus, .sidebar-nav a:focus {
   background: var(--bg-light);
   transition: width 0.3s ease;
 }
-.header-profile-links a:hover { color: var(--cor-aviso); }
+.header-profile-links a:hover { color: var(--cor-accent); }
 .header-profile-links a:hover::after { width: 100%; }
 
 .site-footer {
@@ -565,12 +602,12 @@ a:focus, button:focus, .sidebar-nav a:focus {
   margin-bottom: 0.25rem !important;
 }
 
-/* Final safety: ensure main areas don't force horizontal scroll */
+/* Safety: prevent horizontal overflow */
 html, body { overflow-x: hidden; }
 
-/* ===== Patch: evita corte à direita (reaplica regras de segurança contra overflow) ===== */
+/* ===== Patch: avoid right cut-off (reapply overflow safety) ===== */
 
-/* Forçar filhos de grids/flex a poderem encolher */
+/* Force grid/flex children to be able to shrink */
 .app-container,
 .main-content,
 .card,
@@ -581,7 +618,7 @@ html, body { overflow-x: hidden; }
   box-sizing: border-box;
 }
 
-/* Main content: limita largura e centra, evita overflow forçado */
+/* Main content: limit width & center to avoid forced overflow */
 .main-content {
   width: 100%;
   max-width: var(--content-max-width, 1100px);
@@ -594,52 +631,52 @@ html, body { overflow-x: hidden; }
   -webkit-font-smoothing: antialiased;
 }
 
-/* Se existirem elementos com width fixa, assegura que não forçam toda a página */
+/* Prevent fixed-width elements from forcing page width */
 .main-content > * {
   min-width: 0;
 }
 
-/* Tabelas/images largas: scroll interno, não forçar layout da página */
+/* Wide tables/images: internal scroll, don't force page layout */
 .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .table-responsive table,
 .main-content table { max-width: 100%; width: 100%; }
 
-/* Em breakpoints onde a sidebar fica no topo, garantir que o container não esconde conteúdo */
+/* At breakpoints where sidebar becomes topbar, ensure container doesn't hide content */
 @media (max-width: 992px) {
-  /* permite que o body não esconda áreas internas (mas sem permitir scroll horizontal desnecessário) */
+  /* allow internal scroll; avoid unnecessary horizontal scroll */
   html, body { overflow-x: hidden; }
 
-  /* se houver algum elemento que ainda esteja a forçar largura, permitir scroll interno no main */
+  /* If an element still forces width, allow internal scroll on main */
   .main-content { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-  /* segurança extra para elementos que possam usar transform/scale */
+  /* extra safety for elements using transform/scale */
   .main-content, .main-content * { max-width: 100%; }
 }
 
-/* Se ainda houver um componente específico a forçar largura, podemos forçar overflow localizado:
+/* If a specific component still forces width, consider localized overflow rules:
    exemplo: .meu-componente { overflow-x: auto; } */
-/* ===== Topbar: permitir wrap e evitar sobreposição (mobile) ===== */
+/* ===== Topbar: allow wrap & avoid overlap (mobile) ===== */
 @media (max-width: 992px) {
-  /* Faz a sidebar comportar-se como topbar em fluxo e garante espaço abaixo do header fixo */
+  /* Make sidebar behave as topbar in flow; ensure space under fixed header */
   .sidebar {
     position: relative !important;
     width: 100% !important;
-    padding-top: 50px; /* reserva espaço para o header fixo */
+    padding-top: 50px; /* reserve space for fixed header */
     border-bottom: 1px solid var(--border-color);
   }
 
-  /* Topbar: permite várias linhas (wrap) em vez de rolar horizontalmente */
+  /* Topbar: allow multiple lines (wrap) instead of horizontal scroll */
   .sidebar-nav {
     display: flex;
     flex-wrap: wrap;           /* <-- permite ir para baixo */
     gap: 0.25rem 0.5rem;       /* linha e coluna gap */
     align-items: center;
-    justify-content: flex-start; /* ou center se preferires */
+    justify-content: flex-start; /* or center if preferred */
     padding: 0.25rem var(--spacing-sm);
     overflow-x: visible;       /* não forçar scroll horizontal */
   }
 
-  /* Lista interna também permite wrap */
+  /* Inner list also allows wrap */
   .sidebar-nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -649,22 +686,22 @@ html, body { overflow-x: hidden; }
     align-items: center;
   }
 
-  /* Cada item fica em linha (ícone à esquerda, texto à direita) e pode quebrar para próxima linha */
+  /* Each item in a row (icon left, text right); can break to next line */
   .sidebar-nav li { display: inline-flex; }
   .sidebar-nav a,
   .sidebar-nav button,
   .sidebar-nav label.has-submenu {
     display: inline-flex;
-    flex-direction: row;       /* ícone à esquerda do texto (mudar para column se preferires empilhar) */
+    flex-direction: row;       /* icon left of text; change to column to stack */
     align-items: center;
     gap: 0.5rem;
     padding: 0.35rem 0.5rem;
-    white-space: nowrap;       /* evita quebra dentro do rótulo; o wrap ocorre entre itens */
-    flex: 0 1 auto;            /* items encolhem se necessário e vão para a linha seguinte */
+    white-space: nowrap;       /* prevent line-break inside label; wrap between items */
+    flex: 0 1 auto;            /* items shrink if needed and wrap to next line */
     min-width: 0;
   }
 
-  /* Ícones alinhados à esquerda do texto (pequeno ajuste visual) */
+  /* Align icons left of text (small tweak) */
   .sidebar-nav .nav-icon,
   .sidebar-nav svg,
   .sidebar-nav img,
@@ -676,53 +713,51 @@ html, body { overflow-x: hidden; }
     display: inline-block !important;
   }
 
-  /* Garanta que submenus (se abertos via checkbox) empurrem conteúdo para baixo */
+  /* Ensure submenus (checkbox-opened) push content down */
   .submenu-toggle:checked + label + .submenu-panel,
   .submenu-panel:target {
     display: block;
   }
 
-  /* Main content fica abaixo do header+topbar sem ficar cortado:
-     como a topbar agora está em fluxo (não fixa) o seu próprio height empurra o main.
-     Mantemos um pequeno padding adicional para segurança. */
+  /* Main content offset below header & topbar; topbar in flow pushes main; keep small safety padding. */
   .main-content {
     width: 100%;
     max-width: var(--content-max-width);
     margin: 0 auto;
     padding-left: var(--spacing-md);
     padding-right: var(--spacing-md);
-    padding-top: calc(50px + var(--spacing-sm)) !important; /* 50px do header fixo + margem */
+    padding-top: calc(50px + var(--spacing-sm)) !important; /* reserve space for fixed header */
     box-sizing: border-box;
   }
 }
 /* =========================
-   Header: mostrar só os 3 links prioritários em mobile e sempre centrados
-   - Preferência: marca os 3 anchors importantes com class="priority"
-   - Fallback: se não alterares HTML, mostra os 3 últimos filhos
+   Header: show top 3 priority links on mobile (centered)
+   - Prefer marking important anchors with class="priority"
+   - Fallback: show last 3 children
    ========================= */
 
 @media (max-width: 768px) {
-  /* Container centrado e com limite de largura para evitar que elementos forçem overflow */
+  /* Center container & constrain width to avoid forced overflow */
   .header-profile-links {
     display: flex;
-    justify-content: center;    /* centra os itens */
+    justify-content: center;    /* center items */
     align-items: center;
     gap: 0.5rem;
-    padding: 0 0.75rem;         /* espaço lateral para não encostar às bordas */
+    padding: 0 0.75rem;         /* side padding to avoid touching edges */
     box-sizing: border-box;
-    flex-wrap: wrap;            /* permite ir para linha de baixo se não couber tudo */
+    flex-wrap: wrap;            /* allow wrapping to next line if necessary */
     max-width: 100%;
     margin: 0 auto;
     /* opcional: limita a largura interna para melhorar leitura */
     width: min(100%, 980px);
   }
 
-  /* Esconder por defeito todos os filhos (links / botões / spans etc) */
+  /* Hide children by default (links/buttons/spans) */
   .header-profile-links > * {
     display: none !important;
   }
 
-  /* 1) Preferido: mostra elementos marcados com .priority (mais robusto) */
+  /* 1) Preferred: show elements marked .priority (robust) */
   .header-profile-links > .priority {
     display: inline-flex !important;
     align-items: center;
@@ -731,12 +766,12 @@ html, body { overflow-x: hidden; }
     padding: 0.25rem 0.5rem;
     box-sizing: border-box;
     white-space: nowrap;
-    flex: 0 1 auto; /* podem encolher se necessário, mas não forçam overflow */
+    flex: 0 1 auto; /* can shrink if needed, without forcing overflow */
     min-width: 0;
-    font-size: clamp(0.85rem, 1.6vw, 1rem); /* fonte responsiva evita cortes */
+    font-size: clamp(0.85rem, 1.6vw, 1rem); /* responsive font to avoid truncation */
   }
 
-  /* 2) Fallback: se não usares .priority, mostra os 3 últimos elementos (ajusta se necessário) */
+  /* 2) Fallback: if not using .priority, show last 3 elements (adjust as needed) */
   .header-profile-links > :nth-last-child(-n+3) {
     display: inline-flex !important;
     align-items: center;
@@ -750,13 +785,13 @@ html, body { overflow-x: hidden; }
     font-size: clamp(0.85rem, 1.6vw, 1rem);
   }
 
-  /* Evita que o botão do lado direito seja cortado: permite wrap e centraliza todas as linhas */
+  /* Prevent right-most button from being cut: allow wrap & center lines */
   .header-profile-links {
-    align-content: center; /* centra linhas quando houver wrap */
+    align-content: center; /* center lines when wrapping */
     justify-content: center;
   }
 
-  /* Ajustes para ecrãs muito pequenos */
+  /* Small-screen adjustments */
   @media (max-width: 420px) {
     .header-profile-links > .priority,
     .header-profile-links > :nth-last-child(-n+3) {
@@ -768,12 +803,12 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* Segurança: no desktop/telas grandes mostramos tudo normalmente (sem alterações) */
+/* Safety: on desktop/large screens show everything normally */
 @media (min-width: 769px) {
   .header-profile-links > * { display: inline-flex !important; }
   .header-profile-links { flex-wrap: nowrap; padding: 0; justify-content: flex-end; } /* manter original */
 }
-/* Ajuste responsivo: encolher texto e espaçamento para evitar que apenas 1 botão apareça */
+/* Responsive tweak: shrink text & spacing to avoid single-button overflow */
 @media (max-width: 768px) {
   .header-profile-links {
     display: flex;
@@ -786,7 +821,7 @@ html, body { overflow-x: hidden; }
     width: 100%;
   }
 
-  /* Garantir que os filhos podem encolher sem forçar overflow */
+  /* Ensure children can shrink without forcing overflow */
   .header-profile-links > * {
     display: inline-flex !important;
     align-items: center;
@@ -796,7 +831,7 @@ html, body { overflow-x: hidden; }
     flex: 0 1 auto;         /* podem encolher, mas não esticam demasiado */
     padding: 0.18rem 0.45rem;
     white-space: nowrap;
-    /* fonte responsiva: diminui com a viewport, porém mantém legibilidade */
+    /* responsive font: scales with viewport while staying legible */
     font-size: clamp(0.78rem, 1.6vw, 1rem);
   }
 
@@ -806,7 +841,7 @@ html, body { overflow-x: hidden; }
     padding: 0.18rem 0.45rem;
   }
 
-  /* ajustes para larguras ainda menores: reduzir mais a fonte e padding */
+  /* Narrow-screen tweaks: reduce font & padding */
   @media (max-width: 520px) {
     .header-profile-links > *,
     .header-profile-links > .priority {
@@ -824,7 +859,7 @@ html, body { overflow-x: hidden; }
     }
   }
 
-  /* último recurso: se mesmo assim faltar espaço, permitimos wrap mas mantemos texto pequeno */
+  /* Last resort: allow wrap but keep text small */
   @media (max-width: 340px) {
     .header-profile-links { flex-wrap: wrap; gap: 0.25rem; }
     .header-profile-links > *,
@@ -835,16 +870,16 @@ html, body { overflow-x: hidden; }
   }
 }
 
-/* Mantém comportamento desktop sem alterações */
+/* Keep desktop behavior unchanged */
 @media (min-width: 769px) {
   .header-profile-links { flex-wrap: nowrap; padding: 0; }
   .header-profile-links > * { display: inline-flex !important; font-size: 1rem; padding: 0 0.5rem; }
 }
 
 /* ===== Tabs: patch para creditacoes-novo (radio-driven tabs, CSS-only) =====
-   - Mostra o painel correcto quando o radio correspondente estiver checked
+   - Show the correct panel when the corresponding radio is checked
    - Aplica estilo "activo" à label correspondente
-   - Mantém acessibilidade com role="tabpanel"/aria-controls quando possível
+   - Keep accessibility using role="tabpanel"/aria-controls when possible
 */
 
 /* escondemos os radios visualmente mas mantemos acesso via label */
@@ -856,13 +891,13 @@ html, body { overflow-x: hidden; }
   overflow: hidden;
 }
 
-/* painéis por defeito escondidos */
+/* Panels hidden by default */
 .req-panel {
   display: none;
 }
 
-/* Mostrar o painel correspondente quando o radio está checked
-   usamos ~ (sibling) porque os radios estão antes do .card no DOM */
+/* Show the corresponding panel when radio is checked
+   we use ~ (sibling) because radios appear before .card in the DOM */
 #tab-novo:checked ~ .card #content-novo,
 #tab-plano:checked ~ .card #content-plano,
 #tab-doc:checked ~ .card #content-doc {
@@ -879,7 +914,7 @@ html, body { overflow-x: hidden; }
   font-weight: var(--font-weight-semibold);
 }
 
-/* Pequeno ajuste: garantir que as labels se comportam como botões de tab */
+/* Minor tweak: labels behave like tab buttons */
 .req-tabs label.req-tab {
   cursor: pointer;
   user-select: none;
@@ -897,13 +932,13 @@ html, body { overflow-x: hidden; }
   background: var(--bg-lighter);
 }
 
-/* Segurança: se houver regras conflitantes, tornamos estas com especificidade suficiente */
+/* Safety: if conflicting rules exist, increase specificity */
 .card #content-novo,
 .card #content-plano,
 .card #content-doc { box-sizing: border-box; }
 
-/* Se tiveres outra regra global escondendo .req-panel com !important, remove-a
-   ou deixa estas selectors com !important (já aplicado acima para display:block). */
+/* If you have a global rule hiding .req-panel with !important, remove it
+   or leave these selectors with !important (already applied above for display:block). */
 /* ===== Quick links (botões apenas na index) =====
    - Garante alinhamento à direita, wrap em telas pequenas
    - Protege cor de texto no hover para evitar "desaparecer"
@@ -919,12 +954,12 @@ html, body { overflow-x: hidden; }
   box-sizing: border-box;
 }
 
-/* Usa a classe .btn existente; aqui ajustamos para garantir contraste e hover previsível */
+/* Use existing .btn; adjust for contrast & predictable hover */
 .quick-links .btn {
   padding: 0.35rem 0.6rem;
   font-size: 0.9rem;
   background: var(--cor-primaria);
-  color: #fff !important;       /* força contraste, evita que regras externas o tornem invisível */
+  color: #fff !important;       /* force contrast & avoid external rules hiding it */
   border-radius: 6px;
   text-decoration: none;
   display: inline-flex;
@@ -933,10 +968,10 @@ html, body { overflow-x: hidden; }
   border: none;
 }
 
-/* Hover / focus: mantém texto visível e escurece levemente o fundo */
+/* Hover / focus: keep text visible and darken background slightly */
 .quick-links .btn:hover,
 .quick-links .btn:focus {
-  background: #004b83;          /* tom um pouco mais escuro */
+  background: var(--cor-primaria-escuro);
   color: #fff !important;
   text-decoration: none;
   outline: 2px solid rgba(0,86,160,0.12);
@@ -950,7 +985,7 @@ html, body { overflow-x: hidden; }
     font-size: 0.78rem;
   }
 }
-/* Mostrar o painel ativo */
+/* Show active panel */
 #tab-objetivos:checked ~ .req-panels #content-objetivos,
 #tab-biblio:checked ~ .req-panels #content-biblio,
 #tab-programa:checked ~ .req-panels #content-programa,
@@ -972,7 +1007,7 @@ html, body { overflow-x: hidden; }
   border-bottom: 1px solid var(--bg-light);
   font-weight: var(--font-weight-semibold);
 }
-/* Mostrar o painel correspondente */
+/* Show corresponding panel */
 #tab-docentes:checked ~ .req-panels #painel-docentes,
 #tab-aluno:checked    ~ .req-panels #painel-aluno {
   display: block;
@@ -986,66 +1021,18 @@ html, body { overflow-x: hidden; }
   border-bottom: 1px solid var(--bg-light);
   font-weight: var(--font-weight-semibold);
 }
-/* ==================== 3. COMPONENTES GERAIS ==================== */
-.card {
-  background-color: light-dark(#fff, #1e1e1e);
-  border: 1px solid light-dark(var(--border-color), #444);
-  border-radius: 8px;
-  padding: var(--spacing-lg);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+/* Componentes gerais consolidados acima — duplicate block removed. */
 
-.btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s;
-  display: inline-block;
-  text-align: center;
-}
+/* ==================== 06. PAGES (page-specific rules) ==================== */
+/* Example: Login — page-specific rules. If many rules are needed for a page, consider a separate CSS or prefix. */
 
-.btn-primary {
-  background-color: var(--cor-primaria);
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
-}
-
-input {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.25rem;
-  border: 1px solid light-dark(var(--border-color), #444);
-  border-radius: 4px;
-  background-color: light-dark(#fff, #2d2d2d);
-  color: light-dark(var(--text-dark), #ddd);
-}
-
-label {
-  display: block;
-  font-weight: 500;
-  margin-bottom: 0.25rem;
-}
-
-.form-group {
-  margin-bottom: var(--spacing-lg);
-}
-
-/* ==================== 4. LAYOUT ESPECÍFICO DE LOGIN ==================== */
-
-/* Centraliza o card de login no meio da página */
+/* Login */
 .login-body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: light-dark(var(--bg-lighter), #121212);
+  background-color: var(--bg-lighter);
   padding: var(--spacing-md);
 }
 
@@ -1090,41 +1077,31 @@ label {
 .login-container p {
   text-align: center;
   margin-top: var(--spacing-xl);
-}
+} 
 
-/* ==================== 5. RESPONSIVIDADE ==================== */
+/* ==================== 07. RESPONSIVE (breakpoints & tweaks) ==================== */
 @media (max-width: 480px) {
   .login-container {
     padding: var(--spacing-lg);
     box-shadow: none;
   }
 }
-/* 1. Remove qualquer contorno de erro automático do navegador */
+/* 1. Remove any default browser invalid outline */
 input:invalid {
     box-shadow: none !important;
     border-color: var(--border-color);
 }
 
-/* 2. Estilo quando o utilizador está a escrever (sem cores de erro/sucesso ainda) */
+/* 2. Style during user input (no error/success colors) */
 input:focus {
     outline: none;
     border-color: var(--cor-primaria) !important;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
 }
 
-/* 3. Estilo de Sucesso: Quando o campo está preenchido corretamente */
-/* O :user-valid só ativa depois de o utilizador sair do campo ou tentar submeter */
-input:user-valid {
-    border: 2px solid var(--cor-sucesso) !important;
-}
+/* 3. Success/Error styles: use valid pseudo-classes */
+input:valid { border: 2px solid var(--cor-sucesso) !important; }
+input:invalid { border: 2px solid var(--cor-perigo) !important; }
 
-/* 4. Estilo de Erro: Quando o formato do email está errado ou está vazio */
-input:user-invalid {
-    border: 2px solid var(--cor-perigo) !important;
-}
-
-/* 5. Garante que o botão de Entrar parece desativado se o form for inválido (Opcional) */
-form:invalid button {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
+/* 5. Ensure login button appears disabled if form is invalid (optional) */
+form:invalid button { opacity: 0.7; cursor: not-allowed; }
