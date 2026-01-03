@@ -5,6 +5,8 @@
 
 /* =========================
    Variables (reduced palette & unified typography)
+   Page(s): Global — used across all pages (layout, colors, typography)
+   Components: Theme variables, spacing, typography
    ========================= */
 :root{
   /* Palette (5 colors) */
@@ -74,6 +76,7 @@
 
 /* =========================
    Reset / Base
+   Page(s): Global — base reset affecting all pages (normalize, base typography)
    ========================= */
 *,
 *::before,
@@ -118,6 +121,8 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
 
 /* =========================
    Layout: grid with sidebar + header
+   Page(s): Global — primary site layout used by most pages (Index, Curso, Disciplina, Geral, Serviços)
+   Components: Header, Sidebar, Main Content
    ========================= */
 .app-container {
   display: grid;
@@ -126,7 +131,10 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
   min-height: 100vh;
 }
 
-/* Header */
+/* Header
+   Page(s): Global — site header (top navigation / brand / profile)
+   Component: header bar
+*/
 .app-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -142,7 +150,10 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
   padding-left: var(--max-sidebar-width); /* evita sobrepor a sidebar no desktop */
 }
 
-/* Sidebar */
+/* Sidebar
+   Page(s): Global — main site sidebar navigation (used on desktop; becomes topbar on mobile)
+   Component: navigation, header area, submenu
+*/
 .sidebar {
   width: var(--max-sidebar-width);
   background-color: var(--bg-light);
@@ -169,6 +180,8 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
 
 /* =========================
    Sidebar navigation
+   Page(s): Global — navigation used across the site (Index, Curso, Disciplina, Serviços, Geral)
+   Component: nav items, submenu, icons
    ========================= */
 .sidebar-nav {
   flex-grow: 1;
@@ -246,6 +259,8 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
 
 /* =========================
    Main Content / Cards / Grid
+   Page(s): Global — used by most pages for content layout (cards, grids)
+   Components: Main content area, Cards, Card grids
    ========================= */
 .main-content {
   display: grid;
@@ -289,7 +304,9 @@ a:hover { color: var(--cor-primaria-escuro); text-decoration: underline; }
 }
 .card-grid-bottom { flex-grow: 1; }
 
-/* ==================== 05. UTILITIES ==================== */
+/* ==================== 05. UTILITIES ====================
+   Page(s): Global — small reusable helpers used across pages (text utilities, badges, alerts)
+*/
 /* Utilities: small reusable helpers; prefer utilities over repeated rules */
 .text-center { text-align: center; }
 .mt-0 { margin-top: 0; }
@@ -324,7 +341,9 @@ button[disabled] { background: #ccc; color: #fff; cursor: not-allowed; opacity: 
 .btn-light { background: var(--bg-lighter); color: var(--text-dark); border: 1px solid var(--border-color); }
 .btn-outline { background: transparent; color: var(--text-dark); border: 1px solid var(--border-color); }
 
-/* Tables */
+/* Tables
+   Page(s): pages showing tabular data (e.g. Serviços/servicos-pagamentos.html, Avaliação/avaliacao-resultados.html, Documentos)
+*/
 .table-row-muted { background-color: var(--bg-light); }
 
 /* Badge color variants (map to palette) */
@@ -367,14 +386,19 @@ button[disabled] { background: #ccc; color: #fff; cursor: not-allowed; opacity: 
 /* Wrapper para tabelas largas (faz scroll horizontal) */
 .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-/* Notices & lists */
+/* Notices & lists
+   Page(s): Index/index.html and pages showing site notices/lists (notices-card)
+*/
 .notices-card .card-content { max-height: 300px; overflow-y: auto; padding-right: var(--spacing-sm); flex-grow: 1; }
 .notices-card ul { list-style: none; padding: 0; margin: 0; }
 .notices-card li { margin-bottom: var(--spacing-sm); border-bottom: 1px dotted var(--border-color); padding-bottom: 5px; }
 .notices-card li a { display: block; font-size: 0.9rem; color: var(--text-dark); }
 .notices-card li a strong { color: var(--cor-perigo); }
 
-/* Calendar */
+/* Calendar
+   Page(s): Aula/aula-calendario.html
+   Component: calendar header, grid, days
+*/
 .calendar-header {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -570,6 +594,8 @@ a:focus, button:focus, .sidebar-nav a:focus {
 }
 /* =========================
    Footer / small utilities
+   Page(s): Global — site footer used across pages
+   Component: site footer, footer metadata
    ========================= */
 .header-profile-links a { color: var(--bg-light); position: relative; transition: color 0.3s ease; }
 .header-profile-links a::after {
@@ -877,6 +903,8 @@ html, body { overflow-x: hidden; }
 }
 
 /* ===== Tabs: patch para creditacoes-novo (radio-driven tabs, CSS-only) =====
+   Page(s): Creditações/creditacoes-novo.html
+   Component: radio-driven tabs (novo/plano/doc)
    - Show the correct panel when the corresponding radio is checked
    - Aplica estilo "activo" à label correspondente
    - Keep accessibility using role="tabpanel"/aria-controls when possible
@@ -940,6 +968,8 @@ html, body { overflow-x: hidden; }
 /* If you have a global rule hiding .req-panel with !important, remove it
    or leave these selectors with !important (already applied above for display:block). */
 /* ===== Quick links (botões apenas na index) =====
+   Page(s): Index/index.html
+   Component: quick action buttons (right-aligned), responsive adjustments
    - Garante alinhamento à direita, wrap em telas pequenas
    - Protege cor de texto no hover para evitar "desaparecer"
 */
@@ -985,7 +1015,10 @@ html, body { overflow-x: hidden; }
     font-size: 0.78rem;
   }
 }
-/* Show active panel */
+/* Show active panel
+   Page(s): Disciplina — e.g. disciplina-programa.html (tabbed panels)
+   Component: tabs for objetivos, biblio, programa, outros, docente, documentos
+*/
 #tab-objetivos:checked ~ .req-panels #content-objetivos,
 #tab-biblio:checked ~ .req-panels #content-biblio,
 #tab-programa:checked ~ .req-panels #content-programa,
@@ -1026,7 +1059,10 @@ html, body { overflow-x: hidden; }
 /* ==================== 06. PAGES (page-specific rules) ==================== */
 /* Example: Login — page-specific rules. If many rules are needed for a page, consider a separate CSS or prefix. */
 
-/* Login */
+/* Login
+   Page(s): Index/login.html
+   Component: login form, container, links, actions
+*/
 .login-body {
   display: flex;
   justify-content: center;
